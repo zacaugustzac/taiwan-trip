@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taiwan Family Trip</title>
+<meta name="description" content="Our 8-day family road trip through Taichung, Sun Moon Lake, Tainan and Kaohsiung, 28 Nov to 5 Dec 2026.">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;1,500&family=Figtree:wght@400;500;600&family=Noto+Serif+TC:wght@600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: sticky tab bar (Overview · Day 1–8 · Eat · Drive & stay); each day is its own page with a photo header, a timed rail and side panels. */
+:root{
+  --bg:#F3F6F5; --surface:#FFFFFF; --ink:#132320; --muted:#5A6B68; --line:#D6E0DD;
+  --lake:#1E5D59; --lake-soft:#E1EEEC; --lantern:#B8472F; --lantern-soft:#F8E6E0; --sun:#E9A93A;
+  --display:"Alegreya",Georgia,"Times New Roman",serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --han:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1817; --surface:#162321; --ink:#E4EDEB; --muted:#93A5A1; --line:#2A3B38;
+  --lake:#6FC0B6; --lake-soft:#1B312E; --lantern:#F08A6E; --lantern-soft:#3A221C; --sun:#F2B84B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1817; --surface:#162321; --ink:#E4EDEB; --muted:#93A5A1; --line:#2A3B38;
+  --lake:#6FC0B6; --lake-soft:#1B312E; --lantern:#F08A6E; --lantern-soft:#3A221C; --sun:#F2B84B; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1080px;margin:0 auto;padding-block:0 80px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.12}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem)}
+h3{font-size:1.3rem}
+p{margin:0}
+a{color:var(--lake)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--lantern);outline-offset:2px}
+.eyebrow{font:600 .74rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.han{font-family:var(--han);line-height:1}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+
+/* Tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding-block:12px;border-bottom:1px solid var(--line);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-decoration:none;color:var(--ink);border:1px solid transparent;border-radius:10px;padding:6px 12px;font:600 .9rem var(--body);line-height:1.2}
+.tab small{font:500 .7rem var(--mono);color:var(--muted)}
+.tab:hover{background:var(--surface);border-color:var(--line)}
+.tab[aria-selected="true"]{background:var(--lake);color:var(--bg);border-color:var(--lake)}
+.tab[aria-selected="true"] small{color:var(--bg);opacity:.8}
+.panel-page{padding-top:28px;display:flex;flex-direction:column;gap:40px}
+.panel-page[hidden]{display:none!important}
+
+/* Photos */
+figure{margin:0;position:relative;overflow:hidden;border-radius:14px;background:var(--lake-soft)}
+figure img{display:block;width:100%;height:100%;object-fit:cover;max-width:100%}
+figcaption{position:absolute;right:8px;bottom:6px;font:500 .66rem var(--body);color:#fff;background:rgba(0,0,0,.45);padding:2px 7px;border-radius:5px;max-width:calc(100% - 16px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+figcaption a{color:#fff;text-decoration:none}
+
+/* Overview hero */
+.hero{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:21/9;min-height:300px;max-width:100%}
+.hero figure{position:absolute;inset:0;border-radius:0}
+.hero .copy{position:absolute;left:0;right:0;bottom:0;padding:28px clamp(18px,4vw,40px) 30px;display:flex;flex-direction:column;gap:8px;
+  background:linear-gradient(to top,rgba(8,20,18,.85),rgba(8,20,18,0));color:#fff}
+.hero h1{font-size:clamp(2.3rem,6vw,4.2rem);font-weight:700;color:#fff}
+.hero h1 em{font-style:italic;font-weight:500;color:#F6D58A}
+.hero .when{font:500 .8rem var(--mono);color:#E7EFEE}
+.intro{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start}
+.intro p{font-size:1.12rem;max-width:58ch}
+.party{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:.88rem}
+
+/* Route */
+.route{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 22px 18px;overflow-x:auto}
+.stops{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(140px,1fr));position:relative;min-width:700px}
+.stops::before{content:"";position:absolute;left:10px;right:10px;top:9px;height:2px;background:repeating-linear-gradient(90deg,var(--lake) 0 10px,transparent 10px 16px)}
+.stop{display:flex;flex-direction:column;gap:4px;padding-right:12px}
+.dot{width:20px;height:20px;border-radius:50%;background:var(--bg);border:3px solid var(--lake);position:relative;z-index:1;margin-bottom:10px}
+.stop.hi .dot{background:var(--lantern);border-color:var(--lantern)}
+.stop .han{font-size:1.45rem}
+.stop strong{font-family:var(--display);font-size:1.1rem}
+.stop span{font-size:.85rem;color:var(--muted)}
+
+/* Day cards on overview */
+.daygrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.daycard{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0;transition:transform .15s,border-color .15s}
+.daycard:hover{transform:translateY(-2px);border-color:var(--lake)}
+.daycard figure{aspect-ratio:4/3;border-radius:0}
+.daycard div{padding:12px 14px 14px;display:flex;flex-direction:column;gap:2px}
+.daycard .mono{font-size:.75rem;color:var(--muted)}
+.daycard b{font-family:var(--display);font-size:1.08rem;line-height:1.2}
+
+/* Tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{font:600 .72rem/1.2 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--lake-soft)}
+tbody tr:last-child td{border-bottom:0}
+td.d{font-family:var(--mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+tr.hi td{background:var(--lantern-soft)}
+.compact table{min-width:0}
+
+/* Day page */
+.dhead{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:stretch}
+.dhead figure{aspect-ratio:3/2;max-width:100%}
+.dtitle{display:flex;flex-direction:column;gap:12px;justify-content:center;min-width:0}
+.dtitle .num{font:700 4.6rem/0.85 var(--display);color:var(--lake)}
+.dtitle.hi .num{color:var(--lantern)}
+.dtitle h2{font-size:clamp(1.8rem,3.6vw,2.5rem)}
+.dtitle p{color:var(--muted);font-size:1.05rem}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.fact{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.fact b{font-weight:600;font-size:.98rem}
+.dbody{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:start}
+.rail{list-style:none;margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:18px;border-left:2px solid var(--line)}
+.rail > li{position:relative;display:grid;grid-template-columns:64px minmax(0,1fr) 180px;gap:14px;align-items:start}
+.rail > li > figure{aspect-ratio:4/3;border-radius:10px;max-width:100%}
+.rail > li::before{content:"";position:absolute;left:-27px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--lake)}
+.rail > li.eat::before{border-color:var(--lantern);background:var(--lantern)}
+.rail > li.quest::before{background:var(--lake)}
+.rail > li.drive::before{border-color:var(--sun);background:var(--sun)}
+.rail .t{font:500 .8rem var(--mono);color:var(--muted);padding-top:2px}
+.rail .what{display:flex;flex-direction:column;gap:4px;min-width:0}
+.rail .what b{font-weight:600;font-size:1.02rem}
+.rail .what p{color:var(--muted);font-size:.95rem}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.84rem;color:var(--muted);margin-bottom:14px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:11px;height:11px;border-radius:50%;display:inline-block;border:2px solid var(--lake)}
+.legend i.e{border-color:var(--lantern);background:var(--lantern)} .legend i.q{background:var(--lake)} .legend i.dr{border-color:var(--sun);background:var(--sun)}
+.pin{display:inline-flex;align-items:center;gap:3px;font:600 .72rem var(--body);text-decoration:none;color:var(--lake);border:1px solid var(--line);border-radius:999px;padding:1px 8px 1px 6px;white-space:nowrap;vertical-align:2px;margin-left:4px;background:var(--surface)}
+.pin::before{content:"";width:8px;height:8px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--lantern)}
+.pin:hover{border-color:var(--lake)}
+.side{display:flex;flex-direction:column;gap:14px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.box h4{font:600 .74rem var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.box.eatb h4{color:var(--lantern)} .box.drv h4{color:var(--ink)}
+.box.drv{border-color:var(--sun)}
+.box ul{margin:0;padding-left:1.05em;display:flex;flex-direction:column;gap:6px;font-size:.94rem}
+.box .thumbs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.box .thumbs figure{aspect-ratio:1/1;border-radius:10px}
+.pager{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.pager a{text-decoration:none;font-weight:600;color:var(--lake)}
+
+/* Eat tab */
+.food{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;list-style:none;margin:0;padding:0}
+.dish{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:border-color .15s,background .15s}
+.dish figure{aspect-ratio:4/3;border-radius:0}
+.dish .db{padding:12px 14px 14px;display:flex;flex-direction:column;gap:3px}
+.dish .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.dish b{font-family:var(--display);font-size:1.12rem}
+.dish .zh{font-family:var(--han);font-size:.95rem;color:var(--lantern)}
+.dish small{color:var(--muted);font-size:.86rem;line-height:1.45}
+.dish label{display:inline-flex;gap:6px;align-items:center;font-size:.8rem;color:var(--muted);cursor:pointer;margin-top:6px}
+.dish input{width:17px;height:17px;accent-color:var(--lantern)}
+.dish:has(input:checked){border-color:var(--lantern);background:var(--lantern-soft)}
+.tally{font:500 .9rem var(--mono);color:var(--lantern)}
+
+/* Drive tab */
+.cmp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cmp .box.rec{border:2px solid var(--lake)}
+.badge{align-self:flex-start;font:600 .7rem var(--body);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--lake);color:var(--bg)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.checks{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.checks li{display:flex;gap:12px;align-items:flex-start;padding:11px 16px;border-bottom:1px solid var(--line)}
+.checks li:last-child{border-bottom:0}
+.checks input{margin-top:5px;width:18px;height:18px;accent-color:var(--lake);flex:0 0 auto}
+.checks label{flex:1;min-width:0}
+.checks li:has(input:checked) label{text-decoration:line-through;color:var(--muted)}
+.credits{font-size:.8rem;color:var(--muted);columns:2;column-gap:28px;padding-left:1.1em;margin:0}
+.credits li{break-inside:avoid;margin-bottom:3px}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.sec-head p{color:var(--muted);max-width:64ch}
+
+@media (max-width:900px){.daygrid{grid-template-columns:repeat(2,minmax(0,1fr))}.cmp{grid-template-columns:1fr}}
+@media (max-width:760px){
+  .intro,.dhead,.dbody,.grid2{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .hero{aspect-ratio:4/5}
+  .credits{columns:1}
+  .dtitle .num{font-size:3.4rem}
+}
+@media (max-width:640px){.rail > li{grid-template-columns:56px minmax(0,1fr)}.rail > li > figure{grid-column:2/-1;aspect-ratio:16/9}}
+@media (max-width:420px){.rail > li{grid-template-columns:1fr;gap:4px}.rail > li > figure{grid-column:auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav class="tabs" role="tablist" aria-label="Trip sections">
+  <a class="tab" role="tab" href="#overview" data-tab="overview">Overview<small>8 days</small></a>
+  <a class="tab" role="tab" href="#day1" data-tab="day1">Day 1<small>Sat 28</small></a>
+  <a class="tab" role="tab" href="#day2" data-tab="day2">Day 2<small>Sun 29</small></a>
+  <a class="tab" role="tab" href="#day3" data-tab="day3">Day 3<small>Mon 30</small></a>
+  <a class="tab" role="tab" href="#day4" data-tab="day4">Day 4<small>Tue 1</small></a>
+  <a class="tab" role="tab" href="#day5" data-tab="day5">Day 5<small>Wed 2</small></a>
+  <a class="tab" role="tab" href="#day6" data-tab="day6">Day 6<small>Thu 3</small></a>
+  <a class="tab" role="tab" href="#day7" data-tab="day7">Day 7<small>Fri 4</small></a>
+  <a class="tab" role="tab" href="#day8" data-tab="day8">Day 8<small>Sat 5</small></a>
+  <a class="tab" role="tab" href="#eat" data-tab="eat">Eat<small>17 dishes</small></a>
+  <a class="tab" role="tab" href="#drive" data-tab="drive">Drive &amp; stay<small>logistics</small></a>
+</nav>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="panel-page" id="overview" role="tabpanel">
+  <div class="hero">
+    <figure><img src="photos/hero5.jpg" alt="Sun Moon Lake with forested mountains behind the town" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Sun_Moon_Lake,_Taiwan_20230202.jpg" target="_blank" rel="noopener">Ken Marshall · CC BY 2.0</a></figcaption></figure>
+    <div class="copy">
+      <span class="when">28 NOV – 5 DEC 2026 · TAICHUNG → SUN MOON LAKE → TAINAN → KAOHSIUNG</span>
+      <h1>Taiwan, <em>the slow way south</em></h1>
+    </div>
+  </div>
+
+  <div class="intro">
+    <p>Misty lake mornings, breakfast beef soup in Tainan, a banyan tree that swallowed a warehouse, and harbour sunsets in Kaohsiung. One relaxed outing each morning, a proper rest every afternoon, and a lot of eating in between.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <span class="eyebrow">Who's coming</span>
+      <div class="party"><span class="chip">Zac</span><span class="chip">Wife</span><span class="chip">Baby</span><span class="chip">Mother-in-law</span><span class="chip">Father-in-law</span></div>
+    </div>
+  </div>
+
+  <div class="route" aria-label="Route">
+    <ol class="stops">
+      <li class="stop"><div class="dot"></div><span class="han">桃園</span><strong>Taoyuan</strong><span>Land ~13:00</span></li>
+      <li class="stop"><div class="dot"></div><span class="han">台中</span><strong>Taichung</strong><span>1 night</span></li>
+      <li class="stop hi"><div class="dot"></div><span class="han">日月潭</span><strong>Sun Moon Lake</strong><span>2 nights</span></li>
+      <li class="stop"><div class="dot"></div><span class="han">台南</span><strong>Tainan</strong><span>2 nights</span></li>
+      <li class="stop"><div class="dot"></div><span class="han">高雄</span><strong>Kaohsiung</strong><span>2 nights, fly home</span></li>
+    </ol>
+  </div>
+
+  <div>
+    <div class="sec-head"><span class="eyebrow">Tap a day</span><h2>Eight days</h2></div>
+    <div class="daygrid">
+      <a class="daycard" href="#day1"><figure><img src="photos/ntt0.jpg" alt="National Taichung Theater" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:National_Taichung_Theater_2019.jpg" target="_blank" rel="noopener">Nico Kaiser · CC BY 2.0</a></figcaption></figure><div><span class="mono">DAY 1 · SAT 28 NOV</span><b>Land and roll into Taichung</b></div></a>
+      <a class="daycard" href="#day2"><figure><img src="photos/miyahara1.jpg" alt="Miyahara red-brick building" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Miyahara_Eye_Hospital_20180301.jpg" target="_blank" rel="noopener">YangChen(TW) · CC BY 2.0</a></figcaption></figure><div><span class="mono">DAY 2 · SUN 29 NOV</span><b>Ice cream, then up to the lake</b></div></a>
+      <a class="daycard" href="#day3"><figure><img src="photos/itathao1.jpg" alt="Boats at Ita Thao Pier" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Boats_at_Ita_Thao_Pier_20150719.jpg" target="_blank" rel="noopener">ironypoisoning · CC BY-SA 2.0</a></figcaption></figure><div><span class="mono">DAY 3 · MON 30 NOV</span><b>A whole day on the lake</b></div></a>
+      <a class="daycard" href="#day4"><figure><img src="photos/ropeway3.jpg" alt="Ropeway gondolas over forest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Sun_Moon_Lake_Ropeway_03.jpg" target="_blank" rel="noopener">Bernard Gagnon · CC BY-SA 3.0</a></figcaption></figure><div><span class="mono">DAY 4 · TUE 1 DEC</span><b>Over the ridges, down to Tainan</b></div></a>
+      <a class="daycard" href="#day5"><figure><img src="photos/treehouse4.jpg" alt="Banyan roots in Anping Tree House" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Anping_Tree_House_03.jpg" target="_blank" rel="noopener">Tze Chiang Hao · CC BY-SA 4.0</a></figcaption></figure><div><span class="mono">DAY 5 · WED 2 DEC</span><b>Tainan, the food capital</b></div></a>
+      <a class="daycard" href="#day6"><figure><img src="photos/pier22.jpg" alt="Pier-2 Art Center banners" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:202407_Buntings_of_the_Pier-2_Art_Center,_Kaohsiung.jpg" target="_blank" rel="noopener">Jonashtand · CC BY-SA 4.0</a></figcaption></figure><div><span class="mono">DAY 6 · THU 3 DEC</span><b>Harbour city</b></div></a>
+      <a class="daycard" href="#day7"><figure><img src="photos/fgs1.jpg" alt="Fo Guang Shan pagodas" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Fo_Guang_Shan_Buddha_Museum_(uploaded_20220204).jpg" target="_blank" rel="noopener">吳 政彦 · CC BY 2.0</a></figcaption></figure><div><span class="mono">DAY 7 · FRI 4 DEC</span><b>Pagodas and a night market</b></div></a>
+      <a class="daycard" href="#day8"><figure><img src="photos/loveriver3.jpg" alt="Kaohsiung skyline over the Love River" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Love_River_(%E7%88%B1%E6%B2%B3),_Kaohsiung,_Taiwan.jpg" target="_blank" rel="noopener">Graphium · CC BY-SA 3.0</a></figcaption></figure><div><span class="mono">DAY 8 · SAT 5 DEC</span><b>Slow morning, fly home</b></div></a>
+    </div>
+  </div>
+
+  <div>
+    <div class="sec-head"><span class="eyebrow">At a glance</span><h2>The week in one table</h2>
+    <p>No more than about 2.5 hours at the wheel on any day. Back at the hotel by 3–4 pm to rest.</p></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Day</th><th>Sleep in</th><th>Morning</th><th>Afternoon</th><th>Evening</th><th>Drive</th></tr></thead>
+      <tbody>
+        <tr><td class="d">1 · Sat 28</td><td><b>Taichung</b></td><td>Fly SIN → TPE</td><td>Collect car, drive to Taichung</td><td>Dinner, theater at night</td><td class="d">~2.5 h</td></tr>
+        <tr><td class="d">2 · Sun 29</td><td><b>Sun Moon Lake</b></td><td>Miyahara, Greenway</td><td>Puli lunch, up to the lake</td><td>Lakeside stroll</td><td class="d">~2 h</td></tr>
+        <tr class="hi"><td class="d">3 · Mon 30</td><td><b>Sun Moon Lake</b></td><td>Boat hop: Xuanguang, Ita Thao</td><td>Rest, spa or pool</td><td>Special dinner by the lake</td><td class="d">0</td></tr>
+        <tr><td class="d">4 · Tue 1</td><td><b>Tainan</b></td><td>Ropeway</td><td>Chimei Museum</td><td>Dadong Night Market</td><td class="d">~3 h</td></tr>
+        <tr><td class="d">5 · Wed 2</td><td><b>Tainan</b></td><td>Beef soup, Anping</td><td>Rest, Hayashi</td><td>Shennong Street</td><td class="d">Taxi</td></tr>
+        <tr><td class="d">6 · Thu 3</td><td><b>Kaohsiung</b></td><td>Congee, drive south</td><td>Pier-2 Art Center</td><td>Love River boat, Liuhe Night Market</td><td class="d">~1 h</td></tr>
+        <tr><td class="d">7 · Fri 4</td><td><b>Kaohsiung</b></td><td>Fo Guang Shan</td><td>Rest</td><td>Ruifeng or Cijin</td><td class="d">~1.5 h</td></tr>
+        <tr><td class="d">8 · Sat 5</td><td><b>Home</b></td><td>Slow breakfast</td><td>Return car, fly 13:10</td><td>Home ~17:30</td><td class="d">~20 min</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- ================= DAY 1 ================= -->
+<section class="panel-page" id="day1" role="tabpanel" hidden>
+  <div class="dhead">
+    <figure><img src="photos/ntt0.jpg" alt="National Taichung Theater&#x27;s curved white facade" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:National_Taichung_Theater_2019.jpg" target="_blank" rel="noopener">Nico Kaiser · CC BY 2.0</a></figcaption></figure>
+    <div class="dtitle"><span class="num">1</span><span class="eyebrow">Saturday 28 November</span><h2>Land and roll into Taichung</h2>
+      <p>A travel day kept deliberately light: land, collect the car at the airport, and an easy freeway drive to Taichung with one rest stop on the way.</p></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Taichung (Xitun)</b></div>
+    <div class="fact"><span class="eyebrow">On the road</span><b>~2.5 h incl. a rest stop</b></div>
+    <div class="fact"><span class="eyebrow">Walking</span><b>Very light</b></div>
+    <div class="fact"><span class="eyebrow">Weather</span><b>~16–25 °C</b></div>
+  </div>
+  <div class="dbody"><div>
+    <div class="legend"><span><i></i>Plan</span><span><i class="e"></i>Food</span><span><i class="q"></i>Side quest</span><span><i class="dr"></i>Drive</span></div>
+    <ol class="rail">      <li><span class="t">Morning</span><div class="what"><b>Fly Singapore → Taoyuan <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Taoyuan+International+Airport" target="_blank" rel="noopener" aria-label="Open Taoyuan International Airport in Google Maps">Map</a></b><p>About 4.5 hours. Book the bulkhead bassinet row and feed the baby on take-off and landing to ease ear pressure.</p></div><figure><img src="photos/plane1.jpg" alt="Fly Singapore → Taoyuan" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:China_Airlines_Boeing_737-800_B-18661_at_Taipei_Songshan_February_2026_2.jpg" target="_blank" rel="noopener">4300streetcar · CC BY 4.0</a></figcaption></figure></li>
+      <li><span class="t">~13:00</span><div class="what"><b>Immigration, bags, SIM cards</b><p>Pick up eSIM or a local SIM at the arrivals hall counters. Change a little cash (NT$) for night markets; most small food stalls are cash-only.</p></div><figure><img src="photos/tpearr1.jpg" alt="Immigration, bags, SIM cards" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97_Taipei_%E8%87%BA%E7%81%A3%E6%A1%83%E5%9C%92%E6%A9%9F%E5%A0%B4_Taoyuan_Int%27l_Airport_%E5%85%A5%E5%A2%83%E5%8D%80_Arrival_hall_March_2024_R12S_09.jpg" target="_blank" rel="noopener">Meutnake Ah ManHO · CC0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">~14:00</span><div class="what"><b>Collect the rental car at the airport</b><p>Rental counters are in the arrivals halls. Allow 30–45 minutes for paperwork and the walk-round. Fit the infant seat, set up phone navigation, and do 10 minutes of slow laps in the car park to get used to driving on the right.</p></div><figure><img src="photos/car0.jpg" alt="Collect the rental car at the airport" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Hyundai_Staria_Leonberg_2022_1X7A0432.jpg" target="_blank" rel="noopener">Alexander Migl · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">~14:45</span><div class="what"><b>Drive south on Freeway 3</b><p>About 2 hours, around 150 km. Freeway 3 is quieter than Freeway 1 and avoids Taipei traffic. Stay in the middle lane, and let the passenger handle navigation.</p></div><figure><img src="photos/freeway0.jpg" alt="Drive south on Freeway 3" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Taiwan_National_Freeway_3_viewed_from_THSR.jpg" target="_blank" rel="noopener">Benlisquare · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="quest"><span class="t">~15:45</span><div class="what"><b>Rest stop at Qingshui Service Area <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Qingshui+Service+Area" target="_blank" rel="noopener" aria-label="Open Qingshui Service Area in Google Maps">Map</a></b><p>A hilltop service area overlooking the Taichung coast with clean toilets, nursing rooms and a food court. Stretch, feed the baby, and swap drivers.</p></div><figure><img src="photos/servicearea0.jpg" alt="Rest stop at Qingshui Service Area" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Qingshui_Service_Area,_2026_(05).jpg" target="_blank" rel="noopener">Bahnfrend · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">~17:00</span><div class="what"><b>Check in and rest</b><p>Use the hotel car park. Unpack only what's needed for one night.</p></div><figure><img src="photos/taichungsky1.jpg" alt="Check in and rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Taichung_Skyline.jpg" target="_blank" rel="noopener">michael spadoni · CC0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">18:30</span><div class="what"><b>Dinner near the hotel</b><p>Xitun has malls with food courts that suit everyone. Have the first bubble tea of the trip.</p></div><figure><img src="photos/xitun4.jpg" alt="Dinner near the hotel" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Shin_Kong_Mitsukoshi_Taichung_Store_8F_2019.jpg" target="_blank" rel="noopener">Wpcpey · CC BY 4.0</a></figcaption></figure></li>
+      <li class="quest"><span class="t">20:00</span><div class="what"><b>National Taichung Theater at night <a class="pin" href="https://www.google.com/maps/search/?api=1&query=National+Taichung+Theater" target="_blank" rel="noopener" aria-label="Open National Taichung Theater in Google Maps">Map</a></b><p>Toyo Ito's opera house has no straight walls. Free to wander in; the rooftop garden is open in the evening.</p></div><figure><img src="photos/ntt5.jpg" alt="National Taichung Theater at night" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:National_Taichung_Theater_(2024-03-09).jpg" target="_blank" rel="noopener">Theserious · CC0</a></figcaption></figure></li>
+</ol></div>
+    <div class="side">
+      <div class="box drv"><h4>Driving today</h4><ul><li>Taoyuan airport → Taichung ~150 km on Freeway 3.</li><li>You'll be tired after the flight: one rest stop, no rushing, aim to arrive before dark (sunset ~17:10).</li><li>Avoid Taipei: don't follow any sat-nav route north into the city.</li><li>Photograph every side of the car at pick-up.</li></ul></div>
+      <div class="box"><h4>Baby &amp; grandparents</h4><ul><li>Gate-check the stroller; you'll have it right at the aircraft door.</li><li>Nursing rooms in Taoyuan's arrivals hall.</li><li>Grandparents: aisle seats near the bassinet row.</li></ul></div>
+      <div class="box"><h4>Good to know</h4><ul><li>Taiwan's online arrival card should be done before you fly.</li><li>Load an EasyCard at any 7-Eleven for small purchases and parking.</li></ul></div>
+    </div>
+  </div>
+  <div class="pager"><a href="#overview">← Overview</a><a href="#day2">Day 2 →</a></div>
+</section>
+
+<!-- ================= DAY 2 ================= -->
+<section class="panel-page" id="day2" role="tabpanel" hidden>
+  <div class="dhead">
+    <figure><img src="photos/miyahara1.jpg" alt="Miyahara&#x27;s red-brick building with its glass roof" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Miyahara_Eye_Hospital_20180301.jpg" target="_blank" rel="noopener">YangChen(TW) · CC BY 2.0</a></figcaption></figure>
+    <div class="dtitle"><span class="num">2</span><span class="eyebrow">Sunday 29 November</span><h2>Ice cream, then up to the lake</h2>
+      <p>A sweet morning in Taichung, lunch near the Greenway, tea tasting at an old tea factory in the hills, and the first sight of Sun Moon Lake by late afternoon.</p></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Sun Moon Lake</b></div>
+    <div class="fact"><span class="eyebrow">On the road</span><b>~2 h total, 3 legs</b></div>
+    <div class="fact"><span class="eyebrow">Walking</span><b>Light, all flat</b></div>
+    <div class="fact"><span class="eyebrow">Weather</span><b>Lake ~13–22 °C</b></div>
+  </div>
+  <div class="dbody"><div>
+    <div class="legend"><span><i></i>Plan</span><span><i class="e"></i>Food</span><span><i class="q"></i>Side quest</span><span><i class="dr"></i>Drive</span></div>
+    <ol class="rail">      <li class="eat"><span class="t">09:30</span><div class="what"><b>Miyahara <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Miyahara+Taichung" target="_blank" rel="noopener" aria-label="Open Miyahara Taichung in Google Maps">Map</a></b><p>A 1920s eye clinic turned dessert palace with Harry Potter-style bookshelves. Ice cream with pineapple-cake or cheesecake toppings, plus beautifully boxed gifts. Doors open around 10; arrive early on a Sunday. Paid car parks are a short walk away.</p></div><figure><img src="photos/miyahara0.jpg" alt="Miyahara" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Miyahara,_Taichung,_Aug_2024.jpg" target="_blank" rel="noopener">Ralff Nestor Nacor · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">10:30</span><div class="what"><b>Sun cakes and the original bubble tea</b><p>Pick up sun cakes, Taichung's flaky honey pastry, for the road. Chun Shui Tang <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Chun+Shui+Tang+Siwei+Store+Taichung" target="_blank" rel="noopener" aria-label="Open Chun Shui Tang Siwei Store Taichung in Google Maps">Map</a> claims to have invented pearl milk tea; its Siwei branch is the original.</p></div><figure><img src="photos/chunshui4.jpg" alt="Sun cakes and the original bubble tea" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Chun_Shui_Tang_(Original_Store),_Taichung,_Jan_2025_(3).jpg" target="_blank" rel="noopener">Ralff Nestor Nacor · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">11:00</span><div class="what"><b>Calligraphy Greenway <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Calligraphy+Greenway+Taichung" target="_blank" rel="noopener" aria-label="Open Calligraphy Greenway Taichung in Google Maps">Map</a></b><p>A long, shaded park strip with cafés and design shops. Flat and stroller-friendly.</p></div><figure><img src="photos/greenway4.jpg" alt="Calligraphy Greenway" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:The_Calligraphy_Greenway_in_Taichung.jpg" target="_blank" rel="noopener">Dquai · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">12:00</span><div class="what"><b>Lunch in Taichung</b><p>The Greenway and nearby Shin Kong Mitsukoshi <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Shin+Kong+Mitsukoshi+Taichung" target="_blank" rel="noopener" aria-label="Open Shin Kong Mitsukoshi Taichung in Google Maps">Map</a> have plenty of family-friendly restaurants, from braised pork rice to hotpot, with nursing rooms in the mall.</p></div><figure><img src="photos/xitun3.jpg" alt="Lunch in Taichung" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Shin_Kong_Mitsukoshi_Taichung_Zhonggang.jpg" target="_blank" rel="noopener">黃 zero · CC BY-SA 2.0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">13:00</span><div class="what"><b>Drive towards the lake</b><p>About 1 hour 15 minutes on Freeway 6, then Provincial Highway 21 past Puli. Tunnels and mountains, easy and well-lit. Good point to swap drivers.</p></div><figure><img src="photos/freeway2.jpg" alt="Drive towards the lake" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723000.jpg" target="_blank" rel="noopener">OnionBulb · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="quest"><span class="t">14:15</span><div class="what"><b>Sun Moon Old Tea Factory <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Sun+Moon+Lake+Antique+Assam+Tea+Farm" target="_blank" rel="noopener" aria-label="Open Sun Moon Lake Antique Assam Tea Farm in Google Maps">Map</a></b><p>A 1950s tea factory in the hills above the lake that still makes organic black tea. Walk through the old drying and rolling floors, taste Red Jade and Assam teas side by side, and try the black-tea ice cream and pastries in the café. Mostly indoors, about an hour.</p></div><figure><img src="photos/teafactory0.jpg" alt="Sun Moon Old Tea Factory" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%88%E8%80%81%E8%8C%B6%E5%BB%A0_Tea_Farm,_Sun_Moon_Lake_14.jpg" target="_blank" rel="noopener">舟集 Boattoad · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">15:30</span><div class="what"><b>Last stretch to the lake</b><p>About 15 minutes of gently winding road. Take it slowly; it's the first look at the water.</p></div><figure><img src="photos/teafactory3.jpg" alt="Last stretch to the lake" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%88%E8%80%81%E8%8C%B6%E5%BB%A0_Tea_Farm,_Sun_Moon_Lake_13.jpg" target="_blank" rel="noopener">舟集 Boattoad · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">16:00</span><div class="what"><b>Check in, rest</b><p>Ask for a lake-view room on a higher floor.</p></div><figure><img src="photos/smlhotel2.jpg" alt="Check in, rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:View_of_Sun_Moon_Lake_from_The_Lalu_Sun_Moon_Lake_01.jpg" target="_blank" rel="noopener">Dquai · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">Dusk</span><div class="what"><b>Shuishe boardwalk <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Shuishe+Pier+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Shuishe Pier Sun Moon Lake in Google Maps">Map</a></b><p>A flat waterfront walk as the lights come on across the water. Dinner in Shuishe village or at the hotel.</p></div><figure><img src="photos/shuishe3.jpg" alt="Shuishe boardwalk" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Shuishe_Pier_at_night.jpg" target="_blank" rel="noopener">Dquai · CC BY-SA 4.0</a></figcaption></figure></li>
+</ol></div>
+    <div class="side">
+      <div class="box drv"><h4>Driving today</h4><ul><li>Taichung → Puli ~55 km, Puli → lake ~20 km.</li><li>Tolls are charged automatically and settled when you return the car.</li><li>Scooters swarm city junctions. Never turn right on red; watch the scooter waiting boxes.</li></ul></div>
+      <div class="box eatb"><h4>Eat today</h4><div class="thumbs"><figure><img src="photos/suncake0.jpg" alt="Flaky sun cake" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Taiwanese_Suncake_(flickr11069409046).jpg" target="_blank" rel="noopener">Connie Ma (fickr user &quot;ironypoisoning&quot;) · CC BY-SA 2.0</a></figcaption></figure><figure><img src="photos/bubbletea0.jpg" alt="Pearl milk tea at Chun Shui Tang" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Pearl_Milk_Tea_in_Chun_Shui_Tang.jpg" target="_blank" rel="noopener">Battlesnake1 · CC0</a></figcaption></figure></div><ul><li>Miyahara ice cream</li><li>Sun cakes</li><li>Pearl milk tea</li><li>Pineapple cakes from Miyahara</li><li>Black-tea ice cream at the tea factory</li></ul></div>
+      <div class="box"><h4>If it rains</h4><ul><li>Skip the Greenway. Miyahara, the mall and the tea factory are all indoors.</li></ul></div>
+    </div>
+  </div>
+  <div class="pager"><a href="#day1">← Day 1</a><a href="#day3">Day 3 →</a></div>
+</section>
+
+<!-- ================= DAY 3 ================= -->
+<section class="panel-page" id="day3" role="tabpanel" hidden>
+  <div class="dhead">
+    <figure><img src="photos/itathao1.jpg" alt="Boats lined up at Ita Thao Pier" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Boats_at_Ita_Thao_Pier_20150719.jpg" target="_blank" rel="noopener">ironypoisoning · CC BY-SA 2.0</a></figcaption></figure>
+    <div class="dtitle hi"><span class="num">3</span><span class="eyebrow">Monday 30 November</span><h2>A whole day on the lake</h2>
+      <p>No packing, no driving. Boats between piers, snacks at every stop, a long afternoon rest and a special dinner by the water.</p></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Sun Moon Lake</b></div>
+    <div class="fact"><span class="eyebrow">On the road</span><b>None. Boats only</b></div>
+    <div class="fact"><span class="eyebrow">Walking</span><b>Light</b></div>
+    <div class="fact"><span class="eyebrow">Dress code</span><b>Something nice tonight</b></div>
+  </div>
+  <div class="dbody"><div>
+    <div class="legend"><span><i></i>Plan</span><span><i class="e"></i>Food</span><span><i class="q"></i>Side quest</span><span><i class="dr"></i>Drive</span></div>
+    <ol class="rail">      <li class="quest"><span class="t">06:30</span><div class="what"><b>Sunrise on the water <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Xiangshan+Visitor+Center+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Xiangshan Visitor Center Sun Moon Lake in Google Maps">Map</a></b><p>Everyone: a stroller or carrier walk along the flat Shuishe boardwalk as the mist lifts. Optional for one adult while the others mind the baby: rent a bike for an hour and ride the lakeside path towards Xiangshan, including a boardwalk that floats over the water. Back for breakfast.</p></div><figure><img src="photos/smlsunrise0.jpg" alt="Sunrise on the water" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E5%87%BA%E6%97%A5%E6%9C%88%E6%BD%AD_-_Sunrise_at_the_Sun_Moon_Lake_-_2012.02_-_panoramio.jpg" target="_blank" rel="noopener">rheins · CC BY 3.0</a></figcaption></figure></li>
+      <li><span class="t">08:00</span><div class="what"><b>Lake-view breakfast</b><p>The mist usually lifts around now.</p></div><figure><img src="photos/smlhotel4.jpg" alt="Lake-view breakfast" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:View_of_Sun_Moon_Lake_from_The_Lalu_Hotel-02.2024-05-10.jpg" target="_blank" rel="noopener">阿道 · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">09:30</span><div class="what"><b>Boat pass from Shuishe Pier <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Shuishe+Pier+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Shuishe Pier Sun Moon Lake in Google Maps">Map</a></b><p>A one-day pass lets you hop Shuishe → Xuanguang → Ita Thao → Shuishe. Boats run about every 30 minutes, are covered, and have bench seats.</p></div><figure><img src="photos/shuishe1.jpg" alt="Boat pass from Shuishe Pier" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Sun-Moon-Lake-Taiwan.jpg" target="_blank" rel="noopener">Webbyj · CC BY-SA 3.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">10:00</span><div class="what"><b>Xuanguang Pier tea eggs <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Xuanguang+Pier+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Xuanguang Pier Sun Moon Lake in Google Maps">Map</a></b><p>The lake's most famous snack: eggs simmered for hours with mushrooms and black tea. Short stairs up to Xuanguang Temple if anyone fancies it.</p></div><figure><img src="photos/teaegg0.jpg" alt="Xuanguang Pier tea eggs" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tea_eggs_ez.jpg" target="_blank" rel="noopener">Dllu · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">11:00</span><div class="what"><b>Ita Thao village <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Ita+Thao+Pier+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Ita Thao Pier Sun Moon Lake in Google Maps">Map</a></b><p>Home of the Thao people. Graze on millet mochi, grilled mountain-pork sausage and fresh fruit along the main street, then an early lunch.</p></div><figure><img src="photos/itathao20.jpg" alt="Ita Thao village" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Ita_Thao_Shopping_Street_01.JPG" target="_blank" rel="noopener">Abasaa · Public domain</a></figcaption></figure></li>
+      <li><span class="t">13:30</span><div class="what"><b>Back to the hotel</b><p>Baby naps. Spa slot or pool time while the others take turns on baby duty.</p></div><figure><img src="photos/smlhotel5.jpg" alt="Back to the hotel" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:In_The_Lalu_Sun_Moon_Lake.jpg" target="_blank" rel="noopener">Dquai · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">16:30</span><div class="what"><b>Golden hour by the water</b><p>Best light for family photos is the last hour before sunset (about 17:10).</p></div><figure><img src="photos/smlsunset2.jpg" alt="Golden hour by the water" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Sunset_At_Sun_Moon_Lake_(168797703).jpeg" target="_blank" rel="noopener">Jimmy Kao · CC BY-SA 3.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">18:00</span><div class="what"><b>Special dinner by the lake</b><p>Table booked at the hotel with a lake view. Early seating keeps the baby on schedule.</p></div><figure><img src="photos/smlhotel0.jpg" alt="Special dinner by the lake" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:View_of_Sun_Moon_Lake_from_The_Lalu_Sun_Moon_Lake_02.jpg" target="_blank" rel="noopener">Dquai · CC BY-SA 4.0</a></figcaption></figure></li>
+</ol></div>
+    <div class="side">
+      <div class="box drv"><h4>Driving today</h4><ul><li>The car stays parked all day. Boats and the hotel shuttle do the work.</li></ul></div>
+      <div class="box eatb"><h4>Eat today</h4><ul><li>Tea eggs at Xuanguang</li><li>Red Jade black tea, grown on the slopes around the lake</li><li>Millet mochi and mountain sausage in Ita Thao</li></ul></div>
+      <div class="box"><h4>Baby &amp; grandparents</h4><ul><li>Bring the carrier for the boats; leave the stroller at the hotel.</li><li>Pack a warm layer: it's windy on the water.</li></ul></div>
+      <div class="box"><h4>If it rains</h4><ul><li>Boats still run in light rain. In heavy rain, drive 10 minutes to Xiangshan Visitor Center or Wenwu Temple, both covered.</li></ul></div>
+    </div>
+  </div>
+  <div class="pager"><a href="#day2">← Day 2</a><a href="#day4">Day 4 →</a></div>
+</section>
+
+<!-- ================= DAY 4 ================= -->
+<section class="panel-page" id="day4" role="tabpanel" hidden>
+  <div class="dhead">
+    <figure><img src="photos/ropeway3.jpg" alt="Ropeway gondolas gliding over forest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Sun_Moon_Lake_Ropeway_03.jpg" target="_blank" rel="noopener">Bernard Gagnon · CC BY-SA 3.0</a></figcaption></figure>
+    <div class="dtitle"><span class="num">4</span><span class="eyebrow">Tuesday 1 December</span><h2>Over the ridges, down to Tainan</h2>
+      <p>A cable car over the mountains, then the long drive of the trip, broken up by a palace-sized museum just outside Tainan.</p></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Tainan</b></div>
+    <div class="fact"><span class="eyebrow">On the road</span><b>~3 h, one long leg</b></div>
+    <div class="fact"><span class="eyebrow">Walking</span><b>Light, lifts everywhere</b></div>
+    <div class="fact"><span class="eyebrow">Weather</span><b>Tainan ~18–26 °C</b></div>
+  </div>
+  <div class="dbody"><div>
+    <div class="legend"><span><i></i>Plan</span><span><i class="e"></i>Food</span><span><i class="q"></i>Side quest</span><span><i class="dr"></i>Drive</span></div>
+    <ol class="rail">      <li class="quest"><span class="t">09:00</span><div class="what"><b>Sun Moon Lake Ropeway <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Sun+Moon+Lake+Ropeway" target="_blank" rel="noopener" aria-label="Open Sun Moon Lake Ropeway in Google Maps">Map</a></b><p>Seated gondolas glide about 1.9 km over the ridges with the lake opening up below. Round trip under an hour. Stroller fits in the cabin.</p></div><figure><img src="photos/ropeway0.jpg" alt="Sun Moon Lake Ropeway" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Nantou-County_Taiwan_Sun-Moon-Lake-Ropeway-02.jpg" target="_blank" rel="noopener">CEphoto, Uwe Aranas · CC BY-SA 3.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">10:30</span><div class="what"><b>Buy tea to take home</b><p>Red Jade black tea from a lakeside tea shop. Then check out.</p></div><figure><img src="photos/teafactory2.jpg" alt="Buy tea to take home" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%88%E8%80%81%E8%8C%B6%E5%BB%A0_Tea_Farm,_Sun_Moon_Lake_01.jpg" target="_blank" rel="noopener">舟集 Boattoad · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">11:00</span><div class="what"><b>Drive south</b><p>About 2.5 hours, mostly Freeway 3. Stop at a freeway service area for lunch; Taiwan's service areas have clean toilets, nursing rooms and decent food courts.</p></div><figure><img src="photos/freeway3.jpg" alt="Drive south" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723007.jpg" target="_blank" rel="noopener">OnionBulb · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">14:30</span><div class="what"><b>Chimei Museum <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Chimei+Museum+Tainan" target="_blank" rel="noopener" aria-label="Open Chimei Museum Tainan in Google Maps">Map</a></b><p>A white palace on a lake with fountains and a sculpture bridge. Inside: European paintings, one of the world's biggest violin collections, natural history and arms. Lifts throughout. Closed Wednesdays, which is why it's today.</p></div><figure><img src="photos/chimei3.jpg" alt="Chimei Museum" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Chimei_Museum_20190210.jpg" target="_blank" rel="noopener">Deon · CC BY-SA 2.0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">17:00</span><div class="what"><b>Drive into Tainan</b><p>About 25 minutes. Use the hotel car park and leave the car there tomorrow.</p></div><figure><img src="photos/chihkan1.jpg" alt="Drive into Tainan" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Chihkan_Tower_night.JPG" target="_blank" rel="noopener">Koika · CC BY-SA 3.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">18:00</span><div class="what"><b>Dadong Night Market <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Dadong+Night+Market+Tainan" target="_blank" rel="noopener" aria-label="Open Dadong Night Market Tainan in Google Maps">Map</a></b><p>One of Tainan's biggest night markets, open only on Mondays, Tuesdays and Fridays, so tonight is the night. About 10 minutes by taxi from the hotel; leave the car parked after the long drive. Go at opening before the crowds. Try sweet potato balls, spicy duck blood and Spanish mackerel stew. Keep it to an hour if everyone is tired.</p></div><figure><img src="photos/dadong1.jpg" alt="Dadong Night Market stalls" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Dadong_Night_Market_20081219_01.jpg" target="_blank" rel="noopener">LH Wong · CC BY-SA 2.0</a></figcaption></figure></li>
+</ol></div>
+    <div class="side">
+      <div class="box drv"><h4>Driving today</h4><ul><li>Evening: taxi to Dadong; the car stays at the hotel.</li><li>Lake → Chimei ~190 km. Swap drivers at the service-area lunch stop; nobody drives more than about 1.5 hours at a stretch.</li><li>Chimei has a large free car park.</li><li>Speed cameras are everywhere on freeways; the limit is usually 100–110 km/h.</li></ul></div>
+      <div class="box"><h4>Baby &amp; grandparents</h4><ul><li>Plan the drive around the baby's nap; leave right after a feed.</li><li>Wheelchairs and baby-care rooms at Chimei.</li></ul></div>
+      <div class="box"><h4>If it rains</h4><ul><li>The ropeway may pause in strong wind or storms. Swap for Xiangshan Visitor Center, then head off earlier.</li></ul></div>
+    </div>
+  </div>
+  <div class="pager"><a href="#day3">← Day 3</a><a href="#day5">Day 5 →</a></div>
+</section>
+
+<!-- ================= DAY 5 ================= -->
+<section class="panel-page" id="day5" role="tabpanel" hidden>
+  <div class="dhead">
+    <figure><img src="photos/treehouse4.jpg" alt="Banyan roots covering the walls of Anping Tree House" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Anping_Tree_House_03.jpg" target="_blank" rel="noopener">Tze Chiang Hao · CC BY-SA 4.0</a></figcaption></figure>
+    <div class="dtitle"><span class="num">5</span><span class="eyebrow">Wednesday 2 December</span><h2>Tainan, the food capital</h2>
+      <p>Taiwan's oldest city. Breakfast soup at dawn, Dutch forts, a warehouse eaten by a tree, and lanterns at night. Leave the car parked; taxis are faster in the old lanes.</p></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Tainan</b></div>
+    <div class="fact"><span class="eyebrow">On the road</span><b>Taxis only</b></div>
+    <div class="fact"><span class="eyebrow">Walking</span><b>Moderate, benches often</b></div>
+    <div class="fact"><span class="eyebrow">Eating</span><b>All day</b></div>
+  </div>
+  <div class="dbody"><div>
+    <div class="legend"><span><i></i>Plan</span><span><i class="e"></i>Food</span><span><i class="q"></i>Side quest</span><span><i class="dr"></i>Drive</span></div>
+    <ol class="rail">      <li class="eat"><span class="t">07:30</span><div class="what"><b>Beef soup breakfast <a class="pin" href="https://www.google.com/maps/search/?api=1&query=A+Cun+Beef+Soup+Tainan" target="_blank" rel="noopener" aria-label="Open A Cun Beef Soup Tainan in Google Maps">Map</a></b><p>Raw slices of the morning's local beef, cooked at the table by boiling broth. A Cun on Baoan Road is the best-known; many shops close once they sell out, so go early.</p></div><figure><img src="photos/beefsoup0.jpg" alt="Beef soup breakfast" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:16-%E5%8F%B0%E5%8D%97%E6%97%A9%E9%A4%90%E5%9C%8B%E8%8F%AF%E8%A1%97%E9%98%BF%E6%9D%91%E7%89%9B%E8%82%89%E6%B9%AF%EF%BC%8C%E5%8F%B0%E5%8D%97%E7%9C%9F%E5%A5%BD_(29484622036).jpg" target="_blank" rel="noopener">Sinchen.Lin · CC BY 2.0</a></figcaption></figure></li>
+      <li><span class="t">09:30</span><div class="what"><b>Anping Old Fort <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Anping+Old+Fort+Tainan" target="_blank" rel="noopener" aria-label="Open Anping Old Fort Tainan in Google Maps">Map</a></b><p>The 17th-century Dutch Fort Zeelandia. Brick walls, a lookout tower and banyan-shaded grounds.</p></div><figure><img src="photos/zeelandia0.jpg" alt="Anping Old Fort" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tainan_Taiwan_Fort-Zeelandia-01.jpg" target="_blank" rel="noopener">CEphoto, Uwe Aranas · CC BY-SA 3.0</a></figcaption></figure></li>
+      <li class="quest"><span class="t">10:15</span><div class="what"><b>Anping Tree House <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Anping+Tree+House+Tainan" target="_blank" rel="noopener" aria-label="Open Anping Tree House Tainan in Google Maps">Map</a></b><p>A merchant warehouse abandoned for decades until banyan roots grew through the walls and roof. Raised walkways lead you through and over it.</p></div><figure><img src="photos/treehouse0.jpg" alt="Anping Tree House" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Anping_Tree_House,_Tainan_(Taiwan).jpg" target="_blank" rel="noopener">Mk2010 · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">11:00</span><div class="what"><b>Anping Old Street <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Anping+Old+Street+Tainan" target="_blank" rel="noopener" aria-label="Open Anping Old Street Tainan in Google Maps">Map</a></b><p>Shrimp rolls at Chou's <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Chou%27s+Shrimp+Rolls+Anping" target="_blank" rel="noopener" aria-label="Open Chou&#x27;s Shrimp Rolls Anping in Google Maps">Map</a>, a bowl of douhua at Tongji <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Tongji+Anping+Douhua" target="_blank" rel="noopener" aria-label="Open Tongji Anping Douhua in Google Maps">Map</a>, candied fruit to take away.</p></div><figure><img src="photos/anpingst1.jpg" alt="Anping Old Street" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Food_for_sale_on_Anping_Old_Street.jpg" target="_blank" rel="noopener">Mx. Granger · CC0</a></figcaption></figure></li>
+      <li><span class="t">13:00</span><div class="what"><b>Hotel rest</b><p>Everyone naps.</p></div><figure><img src="photos/chihkan2.jpg" alt="Hotel rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Chihkan_Tower_54510-Tainan_(44807297992).jpg" target="_blank" rel="noopener">xiquinhosilva · CC BY 2.0</a></figcaption></figure></li>
+      <li><span class="t">15:30</span><div class="what"><b>Hayashi Department Store <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Hayashi+Department+Store+Tainan" target="_blank" rel="noopener" aria-label="Open Hayashi Department Store Tainan in Google Maps">Map</a></b><p>Southern Taiwan's first department store (1932), restored with its vintage lift and a rooftop Shinto shrine that survived wartime strafing. Best spot for local crafts and edible souvenirs.</p></div><figure><img src="photos/hayashi0.jpg" alt="Hayashi Department Store" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Hayashi_Department_Store_in_Tainan,_Taiwan_(%E6%9E%97%E7%99%BE%E8%B2%A8%EF%BC%89.jpg" target="_blank" rel="noopener">Lchung9779 · CC0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">17:30</span><div class="what"><b>Danzai noodles at Du Hsiao Yueh <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Du+Hsiao+Yueh+Tainan" target="_blank" rel="noopener" aria-label="Open Du Hsiao Yueh Tainan in Google Maps">Map</a></b><p>The shop that made this tiny bowl famous: shrimp broth, minced pork, one prawn. Order two each. Coffin bread nearby at Chikan <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Chikan+Coffin+Bread+Tainan" target="_blank" rel="noopener" aria-label="Open Chikan Coffin Bread Tainan in Google Maps">Map</a> if anyone has room.</p></div><figure><img src="photos/danzai0.jpg" alt="Danzai noodles at Du Hsiao Yueh" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tan_Tsai_Noodle_of_Tu_Hsiao_Yue_2015.jpg" target="_blank" rel="noopener">Wpcpey · CC BY 4.0</a></figcaption></figure></li>
+      <li><span class="t">19:00</span><div class="what"><b>Shennong Street <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Shennong+Street+Tainan" target="_blank" rel="noopener" aria-label="Open Shennong Street Tainan in Google Maps">Map</a></b><p>A narrow, lantern-lit Qing-era street of wooden shophouses turned tea houses, dessert shops and craft stores. Baby in the carrier.</p></div><figure><img src="photos/shennong2.jpg" alt="Shennong Street" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Shennong_Street,_Tainan_-_TainanShennong5495.jpg" target="_blank" rel="noopener">lumoplank · CC0</a></figcaption></figure></li>
+</ol></div>
+    <div class="side">
+      <div class="box drv"><h4>Driving today</h4><ul><li>Car stays in the hotel car park. Old-town lanes are narrow and street parking is scarce.</li><li>Use Uber XL or two taxis; every stop is 10–20 minutes away.</li></ul></div>
+      <div class="box eatb"><h4>Eat today</h4><div class="thumbs"><figure><img src="photos/coffin0.jpg" alt="Coffin bread filled with seafood chowder" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Coffin_bread_-_Tainan,_Taiwan_(2017).jpg" target="_blank" rel="noopener">Riblet15 · CC BY-SA 4.0</a></figcaption></figure><figure><img src="photos/anpingst0.jpg" alt="Anping Old Street snack stalls" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Anping_Old_Street.jpg" target="_blank" rel="noopener">Chongkian · CC BY-SA 4.0</a></figcaption></figure></div><ul><li>Beef soup</li><li>Shrimp rolls and douhua</li><li>Danzai noodles</li><li>Coffin bread</li></ul></div>
+      <div class="box"><h4>If it rains</h4><ul><li>Keep Hayashi; add Tainan Art Museum Building 2 <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Tainan+Art+Museum+Building+2" target="_blank" rel="noopener" aria-label="Open Tainan Art Museum Building 2 in Google Maps">Map</a>, a striking white building with indoor galleries.</li></ul></div>
+    </div>
+  </div>
+  <div class="pager"><a href="#day4">← Day 4</a><a href="#day6">Day 6 →</a></div>
+</section>
+
+<!-- ================= DAY 6 ================= -->
+<section class="panel-page" id="day6" role="tabpanel" hidden>
+  <div class="dhead">
+    <figure><img src="photos/pier22.jpg" alt="Colourful banners at Pier-2 Art Center" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:202407_Buntings_of_the_Pier-2_Art_Center,_Kaohsiung.jpg" target="_blank" rel="noopener">Jonashtand · CC BY-SA 4.0</a></figcaption></figure>
+    <div class="dtitle"><span class="num">6</span><span class="eyebrow">Thursday 3 December</span><h2>Harbour city</h2>
+      <p>A short drive south to Kaohsiung: harbour warehouses full of art, a stained-glass metro station and a sunset boat on the Love River.</p></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Kaohsiung</b></div>
+    <div class="fact"><span class="eyebrow">On the road</span><b>~1 h</b></div>
+    <div class="fact"><span class="eyebrow">Walking</span><b>Light, wide promenades</b></div>
+    <div class="fact"><span class="eyebrow">Weather</span><b>~19–27 °C, sunniest stop</b></div>
+  </div>
+  <div class="dbody"><div>
+    <div class="legend"><span><i></i>Plan</span><span><i class="e"></i>Food</span><span><i class="q"></i>Side quest</span><span><i class="dr"></i>Drive</span></div>
+    <ol class="rail">      <li class="eat"><span class="t">08:00</span><div class="what"><b>Milkfish belly congee <a class="pin" href="https://www.google.com/maps/search/?api=1&query=A+Tang+Salty+Congee+Tainan" target="_blank" rel="noopener" aria-label="Open A Tang Salty Congee Tainan in Google Maps">Map</a></b><p>Tainan's other classic breakfast. A Tang's salty congee is a local institution and opens before dawn.</p></div><figure><img src="photos/milkfish0.jpg" alt="Milkfish belly congee" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Milkfish_Congee_%E8%99%B1%E7%9B%AE%E9%AD%9A%E7%B2%A5.jpg" target="_blank" rel="noopener">姜 明雄 · CC0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">10:00</span><div class="what"><b>Drive to Kaohsiung</b><p>About 1 hour on Freeway 1. Drop bags at the hotel.</p></div><figure><img src="photos/freeway4.jpg" alt="Drive to Kaohsiung" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723008.jpg" target="_blank" rel="noopener">OnionBulb · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">12:00</span><div class="what"><b>Lunch, then papaya milk</b><p>Kaohsiung's signature drink. The Kaohsiung Milk King <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Kaohsiung+Milk+King" target="_blank" rel="noopener" aria-label="Open Kaohsiung Milk King in Google Maps">Map</a> has been blending it since the 1960s.</p></div><figure><img src="photos/papaya33.jpg" alt="Lunch, then papaya milk" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Food_%E6%9C%A8%E7%93%9C%E7%89%9B%E5%A5%B6,_%E5%93%88%E5%AF%86%E7%93%9C%E7%89%9B%E5%A5%B6,_%E5%85%89%E8%8F%AF%E6%9C%A8%E7%93%9C%E7%89%9B%E5%A5%B6%E5%A4%A7%E7%8E%8B,_%E5%85%89%E8%8F%AF%E5%A4%9C%E5%B8%82,_%E9%AB%98%E9%9B%84_(15747947605).jpg" target="_blank" rel="noopener">bryan... from Taipei, Taiwan · CC BY-SA 2.0</a></figcaption></figure></li>
+      <li><span class="t">13:00</span><div class="what"><b>Hotel rest</b></div><figure><img src="photos/kaohsiungsky1.jpg" alt="Hotel rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Kaohsiung_skyline_2020_May.jpg" target="_blank" rel="noopener">ABOVE THE SKY · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">15:30</span><div class="what"><b>Pier-2 Art Center <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Pier-2+Art+Center+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Pier-2 Art Center Kaohsiung in Google Maps">Map</a></b><p>Old harbour warehouses turned galleries, design shops and giant outdoor sculptures. The Kaohsiung Music Center across the water has wave-shaped buildings. Flat and stroller-friendly with paid parking.</p></div><figure><img src="photos/pier20.jpg" alt="Pier-2 Art Center" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Pier-2_Art_Center.jpg" target="_blank" rel="noopener">Anav Rin from Gushan, Kaohsiung, Taipei · CC BY 2.0</a></figcaption></figure></li>
+      <li><span class="t">17:00</span><div class="what"><b>Love River boat <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Love+River+Boat+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Love River Boat Kaohsiung in Google Maps">Map</a></b><p>A gentle 20-minute cruise timed for sunset (about 17:10) as the bridges light up.</p></div><figure><img src="photos/loveriver2.jpg" alt="Love River boat" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Gondola_on_Love_River,_Kaohsiung,_Taiwan.JPG" target="_blank" rel="noopener">SSR2000 · CC BY-SA 3.0</a></figcaption></figure></li>
+      <li class="quest"><span class="t">18:00</span><div class="what"><b>Dome of Light <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Formosa+Boulevard+Station+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Formosa Boulevard Station Kaohsiung in Google Maps">Map</a></b><p>Formosa Boulevard metro station's ceiling is one huge stained-glass artwork. A 10-minute taxi from the river.</p></div><figure><img src="photos/domeoflight0.jpg" alt="Dome of Light" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Dome_of_Light,_Kaohsiung,_May_2026.jpg" target="_blank" rel="noopener">Ralff Nestor Nacor · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">18:30</span><div class="what"><b>Liuhe Night Market <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Liuhe+Night+Market+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Liuhe Night Market Kaohsiung in Google Maps">Map</a></b><p>A 3-minute walk from the Dome of Light. Open every night, spacious and easy with a carrier. Dinner by grazing: seafood skewers, braised duck, and papaya milk from Zheng's stall, which has been blending it since 1965.</p></div><figure><img src="photos/papaya31.jpg" alt="Papaya milk at Liuhe Night Market" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:202001_A_cup_of_papaya_milk_bought_at_Liouho_Night_Market,_Kaohsiung.jpg" target="_blank" rel="noopener">Jonashtand · CC BY-SA 4.0</a></figcaption></figure></li>
+</ol></div>
+    <div class="side">
+      <div class="box drv"><h4>Driving today</h4><ul><li>Tainan → Kaohsiung ~50 km.</li><li>Evening: leave the car at the hotel and take a taxi for the river, Dome of Light and Liuhe.</li><li>Kaohsiung's roads are wide and calmer than Taipei's, but watch the light-rail tracks around the harbour.</li></ul></div>
+      <div class="box"><h4>Baby &amp; grandparents</h4><ul><li>Pier-2 and the riverside are smooth for strollers.</li><li>Metro stations all have lifts.</li></ul></div>
+      <div class="box"><h4>If it rains</h4><ul><li>Pier-2 has indoor galleries. Dream Mall <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Dream+Mall+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Dream Mall Kaohsiung in Google Maps">Map</a> has a rooftop Ferris wheel and a big food court.</li></ul></div>
+    </div>
+  </div>
+  <div class="pager"><a href="#day5">← Day 5</a><a href="#day7">Day 7 →</a></div>
+</section>
+
+<!-- ================= DAY 7 ================= -->
+<section class="panel-page" id="day7" role="tabpanel" hidden>
+  <div class="dhead">
+    <figure><img src="photos/fgs1.jpg" alt="Pagodas lining the avenue at Fo Guang Shan" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Fo_Guang_Shan_Buddha_Museum_(uploaded_20220204).jpg" target="_blank" rel="noopener">吳 政彦 · CC BY 2.0</a></figcaption></figure>
+    <div class="dtitle"><span class="num">7</span><span class="eyebrow">Friday 4 December</span><h2>Pagodas and a night market</h2>
+      <p>A morning at one of Taiwan's grandest temple complexes, a rest, then the night market or a seafood dinner on an island across the harbour.</p></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Kaohsiung</b></div>
+    <div class="fact"><span class="eyebrow">On the road</span><b>~1.5 h, two round trips</b></div>
+    <div class="fact"><span class="eyebrow">Walking</span><b>Moderate, wheelchairs on loan</b></div>
+    <div class="fact"><span class="eyebrow">Tonight</span><b>Pick A or B</b></div>
+  </div>
+  <div class="dbody"><div>
+    <div class="legend"><span><i></i>Plan</span><span><i class="e"></i>Food</span><span><i class="q"></i>Side quest</span><span><i class="dr"></i>Drive</span></div>
+    <ol class="rail">      <li class="drive"><span class="t">08:30</span><div class="what"><b>Drive to Fo Guang Shan</b><p>About 40 minutes. Large free car park.</p></div><figure><img src="photos/fgs0.jpg" alt="Drive to Fo Guang Shan" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Fo_Guang_Shan_Buddha_Museum_%E4%BD%9B%E5%85%89%E5%B1%B1%E4%BD%9B%E9%99%80%E7%B4%80%E5%BF%B5%E9%A4%A8_.jpg" target="_blank" rel="noopener">Huicheng1967 · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">09:15</span><div class="what"><b>Fo Guang Shan Buddha Museum <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Fo+Guang+Shan+Buddha+Museum" target="_blank" rel="noopener" aria-label="Open Fo Guang Shan Buddha Museum in Google Maps">Map</a></b><p>An avenue of eight pagodas leads to a 108-metre bronze Buddha. Covered walkways, free wheelchairs and strollers, and very quiet on a weekday morning.</p></div><figure><img src="photos/bigbuddha20.jpg" alt="Fo Guang Shan Buddha Museum" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Kaohsiung_Fo_Guang_Shan_Buddha_Memorial_Centre_04.jpg" target="_blank" rel="noopener">Zairon · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">12:00</span><div class="what"><b>Vegetarian lunch on site</b><p>Excellent, inexpensive and calm.</p></div><figure><img src="photos/veg1.jpg" alt="Vegetarian lunch on site" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Vegetarian_food_in_Shipai.jpg" target="_blank" rel="noopener">Allervous · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">13:30</span><div class="what"><b>Back to the hotel to rest</b></div><figure><img src="photos/kaohsiungsky0.jpg" alt="Back to the hotel to rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Kaohsiung_Skyline_Panorama_20240118.jpg" target="_blank" rel="noopener">Photographyplayers ( Harvard Hsieh ) · CC BY 2.0</a></figcaption></figure></li>
+      <li class="eat"><span class="t">17:30</span><div class="what"><b>Option A: Ruifeng Night Market <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Ruifeng+Night+Market+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Ruifeng Night Market Kaohsiung in Google Maps">Map</a></b><p>The locals' night market. Go at opening before it packs out. Grilled squid, cheese potatoes, fried chicken, fresh fruit. Closed Mondays and Wednesdays; Friday is perfect.</p></div><figure><img src="photos/ruifeng0.jpg" alt="Option A: Ruifeng Night Market" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Ruifeng_Night_Market,_2026_(03).jpg" target="_blank" rel="noopener">Bahnfrend · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="quest"><span class="t">16:30</span><div class="what"><b>Option B: Cijin Island <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Gushan+Ferry+Pier+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Gushan Ferry Pier Kaohsiung in Google Maps">Map</a></b><p>Park at Gushan and take the 5-minute ferry, or drive through the cross-harbour tunnel. Ride a bike or trishaw along the beach, climb to the lighthouse <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Cijin+Lighthouse+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Cijin Lighthouse Kaohsiung in Google Maps">Map</a> for the view, then a seafood dinner on Cijin's seafood street where you pick the catch and how it's cooked.</p></div><figure><img src="photos/ferry2.jpg" alt="Option B: Cijin Island" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:202001_Views_from_ferry_from_Gushan_to_Cijin,_Kaohsiung_07.jpg" target="_blank" rel="noopener">Jonashtand · CC BY-SA 4.0</a></figcaption></figure></li>
+</ol></div>
+    <div class="side">
+      <div class="box drv"><h4>Driving today</h4><ul><li>Fo Guang Shan ~30 km each way.</li><li>For Ruifeng, take a taxi; parking nearby is tight on Friday nights.</li></ul></div>
+      <div class="box eatb"><h4>Eat today</h4><ul><li>Fo Guang Shan vegetarian lunch</li><li>Night-market grazing or a Cijin seafood feast</li><li>Last papaya milk</li></ul></div>
+      <div class="box"><h4>If it rains</h4><ul><li>Fo Guang Shan is mostly under cover. Swap the evening for Dream Mall's food court.</li></ul></div>
+    </div>
+  </div>
+  <div class="pager"><a href="#day6">← Day 6</a><a href="#day8">Day 8 →</a></div>
+</section>
+
+<!-- ================= DAY 8 ================= -->
+<section class="panel-page" id="day8" role="tabpanel" hidden>
+  <div class="dhead">
+    <figure><img src="photos/loveriver3.jpg" alt="Kaohsiung towers reflected in the Love River at night" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Love_River_(%E7%88%B1%E6%B2%B3),_Kaohsiung,_Taiwan.jpg" target="_blank" rel="noopener">Graphium · CC BY-SA 3.0</a></figcaption></figure>
+    <div class="dtitle"><span class="num">8</span><span class="eyebrow">Saturday 5 December</span><h2>Slow morning, fly home</h2>
+      <p>One last breakfast, return the car at the airport, and home in time for a normal bedtime.</p></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><span class="eyebrow">Flight</span><b class="mono">CI757 13:10 → 17:30</b></div>
+    <div class="fact"><span class="eyebrow">On the road</span><b>~20 min to KHH</b></div>
+    <div class="fact"><span class="eyebrow">Car return</span><b>By 11:00</b></div>
+    <div class="fact"><span class="eyebrow">Walking</span><b>Minimal</b></div>
+  </div>
+  <div class="dbody"><div>
+    <div class="legend"><span><i></i>Plan</span><span><i class="e"></i>Food</span><span><i class="q"></i>Side quest</span><span><i class="dr"></i>Drive</span></div>
+    <ol class="rail">      <li class="eat"><span class="t">08:00</span><div class="what"><b>Slow breakfast</b><p>Last chance for a Taiwanese breakfast: soy milk and egg crêpes at any neighbourhood breakfast shop.</p></div><figure><img src="photos/breakfast0.jpg" alt="Slow breakfast" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Taiwanese_egg_cr%C3%AApe_danbing_with_corn.jpg" target="_blank" rel="noopener">Heeheemalu · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">09:30</span><div class="what"><b>Pack and check out</b><p>Snacks and tea in hand luggage, liquids in checked bags.</p></div><figure><img src="photos/kaohsiungsky3.jpg" alt="Pack and check out" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Kaohsiung_city_Skyline_at_night.jpg" target="_blank" rel="noopener">Heeheemalu · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">10:15</span><div class="what"><b>Refuel and return the car <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Kaohsiung+International+Airport" target="_blank" rel="noopener" aria-label="Open Kaohsiung International Airport in Google Maps">Map</a></b><p>Fill up nearby, then return at the airport. Staff check for damage and settle tolls; allow 20–30 minutes.</p></div><figure><img src="photos/gas0.jpg" alt="Refuel and return the car" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Guanyuan_Gas_stations01.jpg" target="_blank" rel="noopener">Matt8830 · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">11:00</span><div class="what"><b>Check in for CI757</b><p>China Airlines, Kaohsiung → Singapore, departs 13:10 and lands 17:30.</p></div><figure><img src="photos/khh1.jpg" alt="Check in for CI757" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E9%AB%98%E9%9B%84%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4.JPG" target="_blank" rel="noopener">龍本 · CC BY-SA 3.0</a></figcaption></figure></li>
+</ol></div>
+    <div class="side">
+      <div class="box drv"><h4>Driving today</h4><ul><li>Petrol stations are full-service: say "95, full". Card or cash.</li><li>Photograph the car at return, just as at pick-up.</li></ul></div>
+      <div class="box"><h4>Baby &amp; grandparents</h4><ul><li>Request the bassinet again at check-in.</li><li>KHH is small and easy; nursing room past security.</li></ul></div>
+    </div>
+  </div>
+  <div class="pager"><a href="#day7">← Day 7</a><a href="#eat">The eating list →</a></div>
+</section>
+
+<!-- ================= EAT ================= -->
+<section class="panel-page" id="eat" role="tabpanel" hidden>
+  <div class="sec-head"><span class="eyebrow">For the foodie</span><h2>The eating list</h2>
+  <p>Seventeen things to taste before we fly home, in trip order. Tick them off as you go. <span class="tally" id="tally"></span></p></div>
+  <ul class="food" id="food">
+    <li class="dish"><figure><img src="photos/bubbletea0.jpg" alt="Pearl milk tea" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Pearl_Milk_Tea_in_Chun_Shui_Tang.jpg" target="_blank" rel="noopener">Battlesnake1 · CC0</a></figcaption></figure><div class="db"><div class="row"><b>Pearl milk tea</b><span class="zh">珍珠奶茶</span></div><small>Taichung, where it's said to have started. Day 1–2.</small><label><input type="checkbox" id="f1">Tasted</label></div></li>
+    <li class="dish"><figure><img src="photos/suncake0.jpg" alt="Sun cake" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Taiwanese_Suncake_(flickr11069409046).jpg" target="_blank" rel="noopener">Connie Ma (fickr user &quot;ironypoisoning&quot;) · CC BY-SA 2.0</a></figcaption></figure><div class="db"><div class="row"><b>Sun cake</b><span class="zh">太陽餅</span></div><small>Taichung. Flaky pastry, malt-honey centre. Day 2.</small><label><input type="checkbox" id="f2">Tasted</label></div></li>
+    <li class="dish"><div class="db"><div class="row"><b>Miyahara ice cream</b><span class="zh">宮原眼科</span></div><small>Taichung. Pick a cake topping. Day 2.</small><label><input type="checkbox" id="f3">Tasted</label></div></li>
+    <li class="dish"><div class="db"><div class="row"><b>Pineapple cake</b><span class="zh">鳳梨酥</span></div><small>Taichung. Miyahara's boxes make great gifts. Day 2.</small><label><input type="checkbox" id="f4">Tasted</label></div></li>
+    <li class="dish"><figure><img src="photos/teaegg0.jpg" alt="Tea eggs" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tea_eggs_ez.jpg" target="_blank" rel="noopener">Dllu · CC BY-SA 4.0</a></figcaption></figure><div class="db"><div class="row"><b>Tea eggs</b><span class="zh">茶葉蛋</span></div><small>Xuanguang Pier, Sun Moon Lake. Day 3.</small><label><input type="checkbox" id="f5">Tasted</label></div></li>
+    <li class="dish"><div class="db"><div class="row"><b>Red Jade black tea</b><span class="zh">紅玉紅茶</span></div><small>Sun Moon Lake. Cinnamon and mint notes. Day 3–4.</small><label><input type="checkbox" id="f6">Tasted</label></div></li>
+    <li class="dish"><div class="db"><div class="row"><b>Millet mochi</b><span class="zh">小米麻糬</span></div><small>Ita Thao. Thao indigenous snack. Day 3.</small><label><input type="checkbox" id="f7">Tasted</label></div></li>
+    <li class="dish"><figure><img src="photos/sweetpotato1.jpg" alt="Sweet potato balls" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E5%9C%B0%E7%93%9C%E7%90%83.jpg" target="_blank" rel="noopener">Ianbu · CC BY-SA 4.0</a></figcaption></figure><div class="db"><div class="row"><b>Sweet potato balls</b><span class="zh">地瓜球</span></div><small>Dadong Night Market. Puffed, hollow and chewy. Day 4.</small><label><input type="checkbox" id="f17">Tasted</label></div></li>
+    <li class="dish"><figure><img src="photos/beefsoup0.jpg" alt="Beef soup" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:16-%E5%8F%B0%E5%8D%97%E6%97%A9%E9%A4%90%E5%9C%8B%E8%8F%AF%E8%A1%97%E9%98%BF%E6%9D%91%E7%89%9B%E8%82%89%E6%B9%AF%EF%BC%8C%E5%8F%B0%E5%8D%97%E7%9C%9F%E5%A5%BD_(29484622036).jpg" target="_blank" rel="noopener">Sinchen.Lin · CC BY 2.0</a></figcaption></figure><div class="db"><div class="row"><b>Beef soup</b><span class="zh">牛肉湯</span></div><small>Tainan, at breakfast. Day 5.</small><label><input type="checkbox" id="f8">Tasted</label></div></li>
+    <li class="dish"><div class="db"><div class="row"><b>Shrimp rolls</b><span class="zh">蝦捲</span></div><small>Anping. Crisp, best eaten hot. Day 5.</small><label><input type="checkbox" id="f9">Tasted</label></div></li>
+    <li class="dish"><div class="db"><div class="row"><b>Douhua</b><span class="zh">豆花</span></div><small>Anping. Silky tofu pudding in syrup. Day 5.</small><label><input type="checkbox" id="f10">Tasted</label></div></li>
+    <li class="dish"><figure><img src="photos/danzai0.jpg" alt="Danzai noodles" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tan_Tsai_Noodle_of_Tu_Hsiao_Yue_2015.jpg" target="_blank" rel="noopener">Wpcpey · CC BY 4.0</a></figcaption></figure><div class="db"><div class="row"><b>Danzai noodles</b><span class="zh">擔仔麵</span></div><small>Tainan. Small bowl, big flavour. Day 5.</small><label><input type="checkbox" id="f11">Tasted</label></div></li>
+    <li class="dish"><figure><img src="photos/coffin0.jpg" alt="Coffin bread" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Coffin_bread_-_Tainan,_Taiwan_(2017).jpg" target="_blank" rel="noopener">Riblet15 · CC BY-SA 4.0</a></figcaption></figure><div class="db"><div class="row"><b>Coffin bread</b><span class="zh">棺材板</span></div><small>Tainan. Fried toast box of creamy chowder. Day 5.</small><label><input type="checkbox" id="f12">Tasted</label></div></li>
+    <li class="dish"><figure><img src="photos/milkfish0.jpg" alt="Milkfish congee" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Milkfish_Congee_%E8%99%B1%E7%9B%AE%E9%AD%9A%E7%B2%A5.jpg" target="_blank" rel="noopener">姜 明雄 · CC0</a></figcaption></figure><div class="db"><div class="row"><b>Milkfish belly congee</b><span class="zh">虱目魚肚粥</span></div><small>Tainan breakfast. Day 6.</small><label><input type="checkbox" id="f13">Tasted</label></div></li>
+    <li class="dish"><div class="db"><div class="row"><b>Papaya milk</b><span class="zh">木瓜牛奶</span></div><small>Kaohsiung's signature drink. Day 6–7.</small><label><input type="checkbox" id="f14">Tasted</label></div></li>
+    <li class="dish"><figure><img src="photos/ruifeng0.jpg" alt="Ruifeng Night Market" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Ruifeng_Night_Market,_2026_(03).jpg" target="_blank" rel="noopener">Bahnfrend · CC BY-SA 4.0</a></figcaption></figure><div class="db"><div class="row"><b>Night-market grazing</b><span class="zh">夜市</span></div><small>Dadong (Day 4), Liuhe (Day 6), Ruifeng (Day 7).</small><label><input type="checkbox" id="f15">Tasted</label></div></li>
+    <li class="dish"><div class="db"><div class="row"><b>Cijin seafood feast</b><span class="zh">旗津海產</span></div><small>Pick the catch, choose how it's cooked. Day 7.</small><label><input type="checkbox" id="f16">Tasted</label></div></li>
+  </ul>
+  <p class="muted" style="font-size:.88rem">Famous shops can sell out or change hours. Check the Google Maps listing the day before.</p>
+</section>
+
+<!-- ================= DRIVE & STAY ================= -->
+<section class="panel-page" id="drive" role="tabpanel" hidden>
+  <div>
+    <div class="sec-head"><span class="eyebrow">Self-drive</span><h2>Driving ourselves</h2>
+    <p>We're driving ourselves the whole way. The route suits it well. Three things to sort out: the paperwork before we go, the right size of car, and leaving it parked in Tainan's old town.</p></div>
+    <div class="cmp">
+      <div class="box rec"><span class="badge">Our plan</span><h3>Self-drive all 8 days</h3><ul><li>Collect the car at Taoyuan airport on Day 1, return it at Kaohsiung airport on Day 8.</li><li>One-way rental, so a drop-off fee applies.</li><li>Total about 600 km over the week.</li></ul></div>
+      <div class="box"><h4>Making Day 1 easy</h4><ul><li>Book the earliest comfortable flight so you drive in daylight.</li><li>Sleep well the night before; the driver skips the in-flight movie.</li><li>Set the hotel as the destination before leaving the car park.</li></ul></div>
+      <div class="box"><h4>Booking the car</h4><ul><li>Book now: 9-seaters with infant seats are limited.</li><li>Choose zero-excess insurance and register every adult who will drive.</li><li>Confirm the pick-up counter is in your arrival terminal.</li></ul></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="box drv"><h4>What every driver needs</h4><ul>
+      <li><b>International Driving Permit</b> from AA Singapore, about SGD 20 and same-day. Bring your licence, passport and 2 passport photos.</li>
+      <li>On pick-up: original Singapore licence, IDP, passport, and a credit card in the main driver's name.</li>
+      <li>A Singapore licence alone is not accepted. An IDP is valid for 30 days after arrival.</li>
+      <li>We're taking turns, so <b>every adult who drives</b> needs their own IDP and must be named on the rental agreement.</li><li>Some rental companies set an upper age limit for drivers; check it when booking if the grandparents will drive.</li></ul></div>
+    <div class="box drv"><h4>The car</h4><ul>
+      <li>5 adults, a car seat and luggage need a <b>9-seater van</b> (Hyundai Staria class). A 7-seater leaves almost no boot space.</li>
+      <li>Book a rear-facing <b>infant car seat</b>; Taiwan law requires one for babies under 1.</li>
+      <li>Tolls are recorded automatically and charged at return.</li>
+      <li>Full insurance with zero excess is worth it for scooter-heavy streets.</li></ul></div>
+    <div class="box"><h4>Driving in Taiwan, for Singapore drivers</h4><ul>
+      <li>Drive on the <b>right</b>; the car is left-hand drive and the indicator and wiper stalks are swapped.</li>
+      <li>No turning right on red. Scooters filter everywhere; check mirrors before every turn.</li>
+      <li>Kerb colours: white = park, yellow = brief stop, red = no parking.</li>
+      <li>Speed cameras are frequent and well signposted.</li></ul></div>
+    <div class="box"><h4>Where the car sleeps</h4><ul>
+      <li><b>Taichung:</b> hotel car park on Day 1; paid lots near Miyahara on Day 2.</li>
+      <li><b>Sun Moon Lake:</b> hotel parking; unused on Day 3.</li>
+      <li><b>Tainan:</b> hotel car park, taxis on Day 5.</li>
+      <li><b>Kaohsiung:</b> hotel car park; taxi to Ruifeng.</li></ul></div>
+  </div>
+
+  <div>
+    <div class="sec-head"><span class="eyebrow">Drive times</span><h2>Every leg</h2></div>
+    <div class="tbl-wrap compact"><table>
+      <thead><tr><th>Day</th><th>From → to</th><th>Distance</th><th>Time</th></tr></thead>
+      <tbody>
+        <tr><td class="d">1</td><td>Taoyuan airport → Taichung</td><td class="d">~150 km</td><td class="d">~2 h</td></tr>
+        <tr><td class="d">2</td><td>Taichung → Puli → Sun Moon Lake</td><td class="d">~75 km</td><td class="d">~1.5 h</td></tr>
+        <tr><td class="d">4</td><td>Sun Moon Lake → Chimei → Tainan</td><td class="d">~200 km</td><td class="d">~3 h</td></tr>
+        <tr><td class="d">6</td><td>Tainan → Kaohsiung</td><td class="d">~50 km</td><td class="d">~1 h</td></tr>
+        <tr><td class="d">7</td><td>Kaohsiung ↔ Fo Guang Shan</td><td class="d">~60 km</td><td class="d">~1.5 h</td></tr>
+        <tr><td class="d">8</td><td>Hotel → Kaohsiung airport</td><td class="d">~10 km</td><td class="d">~20 min</td></tr>
+      </tbody></table></div>
+    <p class="muted" style="font-size:.85rem;margin-top:8px">Approximate, without stops or traffic.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="box"><h4>Flights</h4><ul>
+      <li><b>Out:</b> Sat 28 Nov, any morning flight Singapore → Taoyuan landing by ~13:00.</li>
+      <li><b>Home:</b> Sat 5 Dec, China Airlines CI757, Kaohsiung 13:10 → Singapore 17:30.</li>
+      <li>Bassinet row for the baby on both legs.</li></ul></div>
+    <div class="box"><h4>Where we stay</h4><ul>
+      <li><b>Taichung</b> · Xitun, near the Greenway</li>
+      <li><b>Sun Moon Lake</b> · lake-view room, Shuishe side</li>
+      <li><b>Tainan</b> · West Central, with a car park</li>
+      <li><b>Kaohsiung</b> · near Pier-2 or the Love River, with a car park</li></ul></div>
+  </div>
+
+  <div>
+    <div class="sec-head"><span class="eyebrow">Before we go</span><h2>Pack and prep</h2></div>
+    <ul class="checks">
+      <li><input type="checkbox" id="p1"><label for="p1">Passports valid 6+ months, including the baby's</label></li>
+      <li><input type="checkbox" id="p2"><label for="p2">International Driving Permit from AA Singapore for every adult who will drive</label></li>
+      <li><input type="checkbox" id="p3"><label for="p3">Taiwan online arrival card for all six travellers</label></li>
+      <li><input type="checkbox" id="p4"><label for="p4">Travel insurance, including rental-car excess cover</label></li>
+      <li><input type="checkbox" id="p5"><label for="p5">Regular medication for the whole trip, in hand luggage</label></li>
+      <li><input type="checkbox" id="p6"><label for="p6">Light layers, one warm jacket, walking shoes, compact umbrella</label></li>
+      <li><input type="checkbox" id="p7"><label for="p7">One slightly nicer outfit for the lake dinner</label></li>
+      <li><input type="checkbox" id="p8"><label for="p8">Phone mount and car charger for navigation</label></li>
+      <li><input type="checkbox" id="p9"><label for="p9">eSIM, Google Maps offline areas, Uber</label></li>
+      <li><input type="checkbox" id="p10"><label for="p10">Suitcase space for tea, pineapple cakes and sun cakes</label></li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="sec-head"><span class="eyebrow">Credits</span><h2 style="font-size:1.3rem">Photos and sources</h2></div>
+    <ul class="credits">
+      <li><a href="https://commons.wikimedia.org/wiki/File:Sun_Moon_Lake,_Taiwan_20230202.jpg" target="_blank" rel="noopener">Sun Moon Lake, Taiwan 20230202.jpg</a> by Ken Marshall, CC BY 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:National_Taichung_Theater_2019.jpg" target="_blank" rel="noopener">National Taichung Theater 2019.jpg</a> by Nico Kaiser, CC BY 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Miyahara_Eye_Hospital_20180301.jpg" target="_blank" rel="noopener">Miyahara Eye Hospital 20180301.jpg</a> by YangChen(TW), CC BY 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Boats_at_Ita_Thao_Pier_20150719.jpg" target="_blank" rel="noopener">Boats at Ita Thao Pier 20150719.jpg</a> by ironypoisoning, CC BY-SA 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Sun_Moon_Lake_Ropeway_03.jpg" target="_blank" rel="noopener">Sun Moon Lake Ropeway 03.jpg</a> by Bernard Gagnon, CC BY-SA 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Anping_Tree_House_03.jpg" target="_blank" rel="noopener">Anping Tree House 03.jpg</a> by Tze Chiang Hao, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:202407_Buntings_of_the_Pier-2_Art_Center,_Kaohsiung.jpg" target="_blank" rel="noopener">202407 Buntings of the Pier-2 Art Center, Kaohsiung.jpg</a> by Jonashtand, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Fo_Guang_Shan_Buddha_Museum_(uploaded_20220204).jpg" target="_blank" rel="noopener">Fo Guang Shan Buddha Museum (uploaded 20220204).jpg</a> by 吳 政彦, CC BY 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Love_River_(%E7%88%B1%E6%B2%B3),_Kaohsiung,_Taiwan.jpg" target="_blank" rel="noopener">Love River (爱河), Kaohsiung, Taiwan.jpg</a> by Graphium, CC BY-SA 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:China_Airlines_Boeing_737-800_B-18661_at_Taipei_Songshan_February_2026_2.jpg" target="_blank" rel="noopener">China Airlines Boeing 737-800 B-18661 at Taipei Songshan February 2026 2.jpg</a> by 4300streetcar, CC BY 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97_Taipei_%E8%87%BA%E7%81%A3%E6%A1%83%E5%9C%92%E6%A9%9F%E5%A0%B4_Taoyuan_Int%27l_Airport_%E5%85%A5%E5%A2%83%E5%8D%80_Arrival_hall_March_2024_R12S_09.jpg" target="_blank" rel="noopener">TW 台灣 Taiwan 台北 Taipei 臺灣桃園機場 Taoyuan Int&#x27;l Airport 入境區 Arrival hall March 2024 R12S 09.jpg</a> by Meutnake Ah ManHO, CC0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Hyundai_Staria_Leonberg_2022_1X7A0432.jpg" target="_blank" rel="noopener">Hyundai Staria Leonberg 2022 1X7A0432.jpg</a> by Alexander Migl, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Taiwan_National_Freeway_3_viewed_from_THSR.jpg" target="_blank" rel="noopener">Taiwan National Freeway 3 viewed from THSR.jpg</a> by Benlisquare, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Qingshui_Service_Area,_2026_(05).jpg" target="_blank" rel="noopener">Qingshui Service Area, 2026 (05).jpg</a> by Bahnfrend, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Taichung_Skyline.jpg" target="_blank" rel="noopener">Taichung Skyline.jpg</a> by michael spadoni, CC0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Shin_Kong_Mitsukoshi_Taichung_Store_8F_2019.jpg" target="_blank" rel="noopener">Shin Kong Mitsukoshi Taichung Store 8F 2019.jpg</a> by Wpcpey, CC BY 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:National_Taichung_Theater_(2024-03-09).jpg" target="_blank" rel="noopener">National Taichung Theater (2024-03-09).jpg</a> by Theserious, CC0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Miyahara,_Taichung,_Aug_2024.jpg" target="_blank" rel="noopener">Miyahara, Taichung, Aug 2024.jpg</a> by Ralff Nestor Nacor, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Chun_Shui_Tang_(Original_Store),_Taichung,_Jan_2025_(3).jpg" target="_blank" rel="noopener">Chun Shui Tang (Original Store), Taichung, Jan 2025 (3).jpg</a> by Ralff Nestor Nacor, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:The_Calligraphy_Greenway_in_Taichung.jpg" target="_blank" rel="noopener">The Calligraphy Greenway in Taichung.jpg</a> by Dquai, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Shin_Kong_Mitsukoshi_Taichung_Zhonggang.jpg" target="_blank" rel="noopener">Shin Kong Mitsukoshi Taichung Zhonggang.jpg</a> by 黃 zero, CC BY-SA 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723000.jpg" target="_blank" rel="noopener">NationalFreeway3 20220723000.jpg</a> by OnionBulb, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%88%E8%80%81%E8%8C%B6%E5%BB%A0_Tea_Farm,_Sun_Moon_Lake_14.jpg" target="_blank" rel="noopener">日月老茶廠 Tea Farm, Sun Moon Lake 14.jpg</a> by 舟集 Boattoad, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%88%E8%80%81%E8%8C%B6%E5%BB%A0_Tea_Farm,_Sun_Moon_Lake_13.jpg" target="_blank" rel="noopener">日月老茶廠 Tea Farm, Sun Moon Lake 13.jpg</a> by 舟集 Boattoad, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:View_of_Sun_Moon_Lake_from_The_Lalu_Sun_Moon_Lake_01.jpg" target="_blank" rel="noopener">View of Sun Moon Lake from The Lalu Sun Moon Lake 01.jpg</a> by Dquai, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Shuishe_Pier_at_night.jpg" target="_blank" rel="noopener">Shuishe Pier at night.jpg</a> by Dquai, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Taiwanese_Suncake_(flickr11069409046).jpg" target="_blank" rel="noopener">Taiwanese Suncake (flickr11069409046).jpg</a> by Connie Ma (fickr user &quot;ironypoisoning&quot;), CC BY-SA 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Pearl_Milk_Tea_in_Chun_Shui_Tang.jpg" target="_blank" rel="noopener">Pearl Milk Tea in Chun Shui Tang.jpg</a> by Battlesnake1, CC0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E5%87%BA%E6%97%A5%E6%9C%88%E6%BD%AD_-_Sunrise_at_the_Sun_Moon_Lake_-_2012.02_-_panoramio.jpg" target="_blank" rel="noopener">日出日月潭 - Sunrise at the Sun Moon Lake - 2012.02 - panoramio.jpg</a> by rheins, CC BY 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:View_of_Sun_Moon_Lake_from_The_Lalu_Hotel-02.2024-05-10.jpg" target="_blank" rel="noopener">View of Sun Moon Lake from The Lalu Hotel-02.2024-05-10.jpg</a> by 阿道, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Sun-Moon-Lake-Taiwan.jpg" target="_blank" rel="noopener">Sun-Moon-Lake-Taiwan.jpg</a> by Webbyj, CC BY-SA 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Tea_eggs_ez.jpg" target="_blank" rel="noopener">Tea eggs ez.jpg</a> by Dllu, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Ita_Thao_Shopping_Street_01.JPG" target="_blank" rel="noopener">Ita Thao Shopping Street 01.JPG</a> by Abasaa, Public domain</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:In_The_Lalu_Sun_Moon_Lake.jpg" target="_blank" rel="noopener">In The Lalu Sun Moon Lake.jpg</a> by Dquai, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Sunset_At_Sun_Moon_Lake_(168797703).jpeg" target="_blank" rel="noopener">Sunset At Sun Moon Lake (168797703).jpeg</a> by Jimmy Kao, CC BY-SA 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:View_of_Sun_Moon_Lake_from_The_Lalu_Sun_Moon_Lake_02.jpg" target="_blank" rel="noopener">View of Sun Moon Lake from The Lalu Sun Moon Lake 02.jpg</a> by Dquai, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Nantou-County_Taiwan_Sun-Moon-Lake-Ropeway-02.jpg" target="_blank" rel="noopener">Nantou-County Taiwan Sun-Moon-Lake-Ropeway-02.jpg</a> by CEphoto, Uwe Aranas, CC BY-SA 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%88%E8%80%81%E8%8C%B6%E5%BB%A0_Tea_Farm,_Sun_Moon_Lake_01.jpg" target="_blank" rel="noopener">日月老茶廠 Tea Farm, Sun Moon Lake 01.jpg</a> by 舟集 Boattoad, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723007.jpg" target="_blank" rel="noopener">NationalFreeway3 20220723007.jpg</a> by OnionBulb, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Chimei_Museum_20190210.jpg" target="_blank" rel="noopener">Chimei Museum 20190210.jpg</a> by Deon, CC BY-SA 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Chihkan_Tower_night.JPG" target="_blank" rel="noopener">Chihkan Tower night.JPG</a> by Koika, CC BY-SA 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Dadong_Night_Market_20081219_01.jpg" target="_blank" rel="noopener">Dadong Night Market 20081219 01.jpg</a> by LH Wong, CC BY-SA 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:16-%E5%8F%B0%E5%8D%97%E6%97%A9%E9%A4%90%E5%9C%8B%E8%8F%AF%E8%A1%97%E9%98%BF%E6%9D%91%E7%89%9B%E8%82%89%E6%B9%AF%EF%BC%8C%E5%8F%B0%E5%8D%97%E7%9C%9F%E5%A5%BD_(29484622036).jpg" target="_blank" rel="noopener">16-台南早餐國華街阿村牛肉湯，台南真好 (29484622036).jpg</a> by Sinchen.Lin, CC BY 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Tainan_Taiwan_Fort-Zeelandia-01.jpg" target="_blank" rel="noopener">Tainan Taiwan Fort-Zeelandia-01.jpg</a> by CEphoto, Uwe Aranas, CC BY-SA 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Anping_Tree_House,_Tainan_(Taiwan).jpg" target="_blank" rel="noopener">Anping Tree House, Tainan (Taiwan).jpg</a> by Mk2010, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Food_for_sale_on_Anping_Old_Street.jpg" target="_blank" rel="noopener">Food for sale on Anping Old Street.jpg</a> by Mx. Granger, CC0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Chihkan_Tower_54510-Tainan_(44807297992).jpg" target="_blank" rel="noopener">Chihkan Tower 54510-Tainan (44807297992).jpg</a> by xiquinhosilva, CC BY 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Hayashi_Department_Store_in_Tainan,_Taiwan_(%E6%9E%97%E7%99%BE%E8%B2%A8%EF%BC%89.jpg" target="_blank" rel="noopener">Hayashi Department Store in Tainan, Taiwan (林百貨）.jpg</a> by Lchung9779, CC0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Tan_Tsai_Noodle_of_Tu_Hsiao_Yue_2015.jpg" target="_blank" rel="noopener">Tan Tsai Noodle of Tu Hsiao Yue 2015.jpg</a> by Wpcpey, CC BY 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Shennong_Street,_Tainan_-_TainanShennong5495.jpg" target="_blank" rel="noopener">Shennong Street, Tainan - TainanShennong5495.jpg</a> by lumoplank, CC0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Coffin_bread_-_Tainan,_Taiwan_(2017).jpg" target="_blank" rel="noopener">Coffin bread - Tainan, Taiwan (2017).jpg</a> by Riblet15, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Anping_Old_Street.jpg" target="_blank" rel="noopener">Anping Old Street.jpg</a> by Chongkian, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Milkfish_Congee_%E8%99%B1%E7%9B%AE%E9%AD%9A%E7%B2%A5.jpg" target="_blank" rel="noopener">Milkfish Congee 虱目魚粥.jpg</a> by 姜 明雄, CC0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723008.jpg" target="_blank" rel="noopener">NationalFreeway3 20220723008.jpg</a> by OnionBulb, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Food_%E6%9C%A8%E7%93%9C%E7%89%9B%E5%A5%B6,_%E5%93%88%E5%AF%86%E7%93%9C%E7%89%9B%E5%A5%B6,_%E5%85%89%E8%8F%AF%E6%9C%A8%E7%93%9C%E7%89%9B%E5%A5%B6%E5%A4%A7%E7%8E%8B,_%E5%85%89%E8%8F%AF%E5%A4%9C%E5%B8%82,_%E9%AB%98%E9%9B%84_(15747947605).jpg" target="_blank" rel="noopener">Food 木瓜牛奶, 哈密瓜牛奶, 光華木瓜牛奶大王, 光華夜市, 高雄 (15747947605).jpg</a> by bryan... from Taipei, Taiwan, CC BY-SA 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Kaohsiung_skyline_2020_May.jpg" target="_blank" rel="noopener">Kaohsiung skyline 2020 May.jpg</a> by ABOVE THE SKY, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Pier-2_Art_Center.jpg" target="_blank" rel="noopener">Pier-2 Art Center.jpg</a> by Anav Rin from Gushan, Kaohsiung, Taipei, CC BY 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Gondola_on_Love_River,_Kaohsiung,_Taiwan.JPG" target="_blank" rel="noopener">Gondola on Love River, Kaohsiung, Taiwan.JPG</a> by SSR2000, CC BY-SA 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Dome_of_Light,_Kaohsiung,_May_2026.jpg" target="_blank" rel="noopener">Dome of Light, Kaohsiung, May 2026.jpg</a> by Ralff Nestor Nacor, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:202001_A_cup_of_papaya_milk_bought_at_Liouho_Night_Market,_Kaohsiung.jpg" target="_blank" rel="noopener">202001 A cup of papaya milk bought at Liouho Night Market, Kaohsiung.jpg</a> by Jonashtand, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Fo_Guang_Shan_Buddha_Museum_%E4%BD%9B%E5%85%89%E5%B1%B1%E4%BD%9B%E9%99%80%E7%B4%80%E5%BF%B5%E9%A4%A8_.jpg" target="_blank" rel="noopener">Fo Guang Shan Buddha Museum 佛光山佛陀紀念館 .jpg</a> by Huicheng1967, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Kaohsiung_Fo_Guang_Shan_Buddha_Memorial_Centre_04.jpg" target="_blank" rel="noopener">Kaohsiung Fo Guang Shan Buddha Memorial Centre 04.jpg</a> by Zairon, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Vegetarian_food_in_Shipai.jpg" target="_blank" rel="noopener">Vegetarian food in Shipai.jpg</a> by Allervous, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Kaohsiung_Skyline_Panorama_20240118.jpg" target="_blank" rel="noopener">Kaohsiung Skyline Panorama 20240118.jpg</a> by Photographyplayers ( Harvard Hsieh ), CC BY 2.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Ruifeng_Night_Market,_2026_(03).jpg" target="_blank" rel="noopener">Ruifeng Night Market, 2026 (03).jpg</a> by Bahnfrend, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:202001_Views_from_ferry_from_Gushan_to_Cijin,_Kaohsiung_07.jpg" target="_blank" rel="noopener">202001 Views from ferry from Gushan to Cijin, Kaohsiung 07.jpg</a> by Jonashtand, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Taiwanese_egg_cr%C3%AApe_danbing_with_corn.jpg" target="_blank" rel="noopener">Taiwanese egg crêpe danbing with corn.jpg</a> by Heeheemalu, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Kaohsiung_city_Skyline_at_night.jpg" target="_blank" rel="noopener">Kaohsiung city Skyline at night.jpg</a> by Heeheemalu, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:Guanyuan_Gas_stations01.jpg" target="_blank" rel="noopener">Guanyuan Gas stations01.jpg</a> by Matt8830, CC BY-SA 4.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:%E9%AB%98%E9%9B%84%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4.JPG" target="_blank" rel="noopener">高雄國際機場.JPG</a> by 龍本, CC BY-SA 3.0</li>
+<li><a href="https://commons.wikimedia.org/wiki/File:%E5%9C%B0%E7%93%9C%E7%90%83.jpg" target="_blank" rel="noopener">地瓜球.jpg</a> by Ianbu, CC BY-SA 4.0</li>
+      <li>Driving requirements: <a href="https://www.goodcars.tw/en/blog/article/general/singaporean-taiwan-car-rental-guide" target="_blank" rel="noopener">GoodCars guide for Singaporeans</a>, <a href="https://foreignersintaiwan.com/blog/taiwan-international-driving-permit-faq" target="_blank" rel="noopener">Foreigners in Taiwan IDP FAQ</a></li>
+      <li>Flight times: <a href="https://info.flightmapper.net/route/YY_KHH_SIN" target="_blank" rel="noopener">FlightMapper KHH → SIN</a></li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll(".tab"));
+  var pages=[].slice.call(document.querySelectorAll(".panel-page"));
+  var ids=pages.map(function(p){return p.id;});
+  function show(id,scroll){
+    if(ids.indexOf(id)<0) id="overview";
+    pages.forEach(function(p){p.hidden=(p.id!==id);});
+    tabs.forEach(function(t){
+      var on=t.dataset.tab===id; t.setAttribute("aria-selected",on?"true":"false");
+      if(on && t.scrollIntoView){try{t.scrollIntoView({block:"nearest",inline:"center"});}catch(e){}}
+    });
+    if(scroll) window.scrollTo(0,0);
+    try{localStorage.setItem("tw-tab",id);}catch(e){}
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest && e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var id=a.getAttribute("href").slice(1);
+    if(ids.indexOf(id)<0) return;
+    e.preventDefault();
+    try{history.replaceState(null,"","#"+id);}catch(err){}
+    show(id,true);
+  });
+  var start=(location.hash||"").slice(1);
+  if(ids.indexOf(start)<0){try{start=localStorage.getItem("tw-tab")||"overview";}catch(e){start="overview";}}
+  show(start,false);
+
+  var KEY="tw-trip-v3", saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){saved={};}
+  var boxes=document.querySelectorAll('input[type="checkbox"]');
+  var food=document.querySelectorAll("#food input"), tally=document.getElementById("tally");
+  function upd(){var n=0;food.forEach(function(b){if(b.checked)n++;});tally.textContent=n+" of "+food.length+" tasted";}
+  boxes.forEach(function(b){
+    b.checked=!!saved[b.id];
+    b.addEventListener("change",function(){saved[b.id]=b.checked;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}upd();});
+  });
+  upd();
+})();
+</script>
+
+</body>
+</html>
