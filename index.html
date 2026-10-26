@@ -100,6 +100,7 @@ figcaption a{color:#fff;text-decoration:none}
 .leaflet-popup-content{font:14px/1.45 var(--body);margin:10px 14px}
 .leaflet-popup-content b{font-family:var(--display);font-size:1.05rem}
 .leaflet-popup-content a{color:#1E5D59}
+#map.darktiles .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.9) saturate(.6)}
 .mapnote{font-size:.85rem;color:var(--muted)}
 @media (max-width:640px){#map{height:440px}}
 
@@ -823,9 +824,9 @@ tr.hi td{background:var(--lantern-soft)}
     var el=document.getElementById("map");
     if(!el||!window.L){if(el)el.innerHTML='<p style="padding:20px">The map could not load. Use the Google Maps button above.</p>';return;}
     map=L.map(el,{scrollWheelZoom:false,zoomControl:true});
-    var style=dark()?"dark_all":"rastertiles/voyager";
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/"+style+"/{z}/{x}/{y}{r}.png",{maxZoom:18,subdomains:"abcd",
-      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'}).addTo(map);
+    if(dark()) el.classList.add("darktiles");
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'}).addTo(map);
     var b=[];
     LEGS.forEach(function(l){L.polyline(l.p,{color:DAYC[l.d-1],weight:4,opacity:.9,dashArray:"8 7"}).addTo(map).bindTooltip("Day "+l.d+" drive");});
     var big=1;
