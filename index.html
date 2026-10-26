@@ -821,6 +821,7 @@ tr.hi td{background:var(--lantern-soft)}
   function dark(){var r=document.documentElement.getAttribute("data-theme");if(r)return r==="dark";return window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;}
   function initMap(){
     if(map){setTimeout(function(){map.invalidateSize();},50);return;}
+    if(document.getElementById("map") && !document.getElementById("map").clientWidth){ setTimeout(initMap,300); return; }
     var el=document.getElementById("map");
     if(!el||!window.L){if(el)el.innerHTML='<p style="padding:20px">The map could not load. Use the Google Maps button above.</p>';return;}
     map=L.map(el,{scrollWheelZoom:false,zoomControl:true});
@@ -838,7 +839,13 @@ tr.hi td{background:var(--lantern-soft)}
         .bindPopup("<b>"+s.n+"</b><br>Day "+s.d+" · "+s.t+'<br><a href="#day'+s.d+'">Open Day '+s.d+'</a> · <a href="'+gm(s.q)+'" target="_blank" rel="noopener">Google Maps</a>');
       b.push(s.ll);
     });
-    map.fitBounds(b,{padding:[30,30]});
+    var moved=false, lastW=0;
+    function fit(){ if(!moved) map.fitBounds(b,{padding:[30,30]}); }
+    map.whenReady(function(){ map.on("zoomstart dragstart",function(e){ if(e&&e.originalEvent!==undefined||map._userTouched) moved=true; }); });
+    el.addEventListener("pointerdown",function(){moved=true;});
+    el.addEventListener("wheel",function(){moved=true;},{passive:true});
+    fit();
+    if(window.ResizeObserver){ new ResizeObserver(function(){ var w=el.clientWidth; if(w&&w!==lastW){ lastW=w; map.invalidateSize(); fit(); } }).observe(el); }
     var leg=document.getElementById("mapleg");
     [1,2,4,6,7,8].forEach(function(d){var sp=document.createElement("span");sp.innerHTML='<i style="background:'+DAYC[d-1]+'"></i>Day '+d+(d===2?" (lake: days 2–3)":d===4?" (Tainan: days 4–5)":"");leg.appendChild(sp);});
   }
