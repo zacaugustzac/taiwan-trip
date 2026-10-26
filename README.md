@@ -1,6 +1,6 @@
 # Taiwan family trip, 28 Nov to 5 Dec 2026
 
-Eight-day road trip itinerary: Taichung, Sun Moon Lake, Tainan, Kaohsiung.
+Eight-day family itinerary: Taichung, Sun Moon Lake, Taipei (with a Keelung day trip). The earlier south route is kept in `archive.html`.
 
 Open `index.html`, or view it on GitHub Pages.
 
