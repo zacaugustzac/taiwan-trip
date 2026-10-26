@@ -9,6 +9,7 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;1,500&family=Figtree:wght@400;500;600&family=Noto+Serif+TC:wght@600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
 /* Layout: sticky tab bar (Overview · Day 1–8 · Eat · Drive & stay); each day is its own page with a photo header, a timed rail and side panels. */
@@ -83,6 +84,24 @@ figcaption a{color:#fff;text-decoration:none}
 .stop .han{font-size:1.45rem}
 .stop strong{font-family:var(--display);font-size:1.1rem}
 .stop span{font-size:.85rem;color:var(--muted)}
+
+/* Route map */
+.mapwrap{display:flex;flex-direction:column;gap:12px}
+.mapbox{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--lake-soft)}
+#map{height:560px;max-width:100%}
+.mapbar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.mapleg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.84rem;color:var(--muted)}
+.mapleg span{display:inline-flex;align-items:center;gap:6px}
+.mapleg i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.gbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--bg);background:var(--lake);border-radius:999px;padding:8px 16px}
+.gbtn:hover{opacity:.9}
+.mk{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 13px var(--body);color:#fff;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+.mk.sm{width:20px;height:20px;font-size:0;border-width:2px}
+.leaflet-popup-content{font:14px/1.45 var(--body);margin:10px 14px}
+.leaflet-popup-content b{font-family:var(--display);font-size:1.05rem}
+.leaflet-popup-content a{color:#1E5D59}
+.mapnote{font-size:.85rem;color:var(--muted)}
+@media (max-width:640px){#map{height:440px}}
 
 /* Day cards on overview */
 .daygrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
@@ -238,6 +257,16 @@ tr.hi td{background:var(--lantern-soft)}
       <li class="stop"><div class="dot"></div><span class="han">台南</span><strong>Tainan</strong><span>2 nights</span></li>
       <li class="stop"><div class="dot"></div><span class="han">高雄</span><strong>Kaohsiung</strong><span>2 nights, fly home</span></li>
     </ol>
+  </div>
+
+  <div class="mapwrap">
+    <div class="sec-head" style="margin-bottom:6px"><span class="eyebrow">The route</span><h2>About 600 km, south down the middle of Taiwan</h2></div>
+    <div class="mapbar">
+      <div class="mapleg" id="mapleg"></div>
+      <a class="gbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=Taoyuan+International+Airport&amp;destination=Kaohsiung+International+Airport&amp;waypoints=National+Taichung+Theater%7CSun+Moon+Lake+Shuishe+Pier%7CChimei+Museum%7CTainan+Hayashi+Department+Store%7CPier-2+Art+Center%7CFo+Guang+Shan+Buddha+Museum&amp;travelmode=driving">Open the full drive in Google Maps</a>
+    </div>
+    <div class="mapbox"><div id="map" role="region" aria-label="Map of the trip route"></div></div>
+    <p class="mapnote">Lines join the stops in travel order; they're not the exact roads. Tap a marker for the day and a Google Maps link.</p>
   </div>
 
   <div>
@@ -757,11 +786,61 @@ tr.hi td{background:var(--lantern-soft)}
 </section>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 (function(){
   var tabs=[].slice.call(document.querySelectorAll(".tab"));
   var pages=[].slice.call(document.querySelectorAll(".panel-page"));
   var ids=pages.map(function(p){return p.id;});
+
+  var map=null;
+  var DAYC=["#B8472F","#C8792B","#2F7D6E","#1E5D59","#5B6FB0","#8A4FA0","#C2477A","#4E6E7A"];
+  var STOPS=[
+    {d:1,n:"Taoyuan International Airport",t:"Land ~13:00, collect the car",ll:[25.0797,121.2342],q:"Taoyuan International Airport"},
+    {d:1,n:"Taichung",t:"Night 1 · Xitun, National Taichung Theater, Fengjia",ll:[24.1626,120.6408],q:"National Taichung Theater",big:1},
+    {d:2,n:"Miyahara",t:"Ice cream and pineapple cakes",ll:[24.1377,120.6835],q:"Miyahara Taichung"},
+    {d:2,n:"Puli",t:"On the way to the lake; Sunday night market",ll:[23.9650,120.9686],q:"Puli City Night Market"},
+    {d:2,n:"Sun Moon Lake",t:"Nights 2–3 · boats, Ita Thao, lake dinner",ll:[23.8661,120.9112],q:"Shuishe Pier Sun Moon Lake",big:1},
+    {d:4,n:"Chimei Museum",t:"Palace museum on the way south",ll:[22.9349,120.2263],q:"Chimei Museum Tainan"},
+    {d:4,n:"Tainan",t:"Nights 4–5 · Anping, Shennong Street, Dadong and Wusheng",ll:[22.9910,120.2017],q:"Hayashi Department Store Tainan",big:1},
+    {d:5,n:"Anping",t:"Old Fort and the Tree House",ll:[23.0017,120.1606],q:"Anping Old Fort Tainan"},
+    {d:6,n:"Kaohsiung",t:"Nights 6–7 · Pier-2, Love River, Liuhe and Ruifeng",ll:[22.6200,120.2814],q:"Pier-2 Art Center Kaohsiung",big:1},
+    {d:7,n:"Fo Guang Shan",t:"Day trip: Buddha Museum",ll:[22.7567,120.4436],q:"Fo Guang Shan Buddha Museum"},
+    {d:8,n:"Kaohsiung International Airport",t:"Return the car, fly 13:10",ll:[22.5771,120.3500],q:"Kaohsiung International Airport"}
+  ];
+  var LEGS=[
+    {d:1,p:[[25.0797,121.2342],[24.1626,120.6408]]},
+    {d:2,p:[[24.1626,120.6408],[24.1377,120.6835],[23.9650,120.9686],[23.8661,120.9112]]},
+    {d:4,p:[[23.8661,120.9112],[22.9349,120.2263],[22.9910,120.2017]]},
+    {d:6,p:[[22.9910,120.2017],[22.6200,120.2814]]},
+    {d:7,p:[[22.6200,120.2814],[22.7567,120.4436]]},
+    {d:8,p:[[22.6200,120.2814],[22.5771,120.3500]]}
+  ];
+  function gm(q){return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);}
+  function dark(){var r=document.documentElement.getAttribute("data-theme");if(r)return r==="dark";return window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches;}
+  function initMap(){
+    if(map){setTimeout(function(){map.invalidateSize();},50);return;}
+    var el=document.getElementById("map");
+    if(!el||!window.L){if(el)el.innerHTML='<p style="padding:20px">The map could not load. Use the Google Maps button above.</p>';return;}
+    map=L.map(el,{scrollWheelZoom:false,zoomControl:true});
+    var style=dark()?"dark_all":"rastertiles/voyager";
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/"+style+"/{z}/{x}/{y}{r}.png",{maxZoom:18,subdomains:"abcd",
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'}).addTo(map);
+    var b=[];
+    LEGS.forEach(function(l){L.polyline(l.p,{color:DAYC[l.d-1],weight:4,opacity:.9,dashArray:"8 7"}).addTo(map).bindTooltip("Day "+l.d+" drive");});
+    var big=1;
+    STOPS.forEach(function(s){
+      var html=s.big?'<div class="mk" style="background:'+DAYC[s.d-1]+'">'+(big++)+'</div>':'<div class="mk sm" style="background:'+DAYC[s.d-1]+'"></div>';
+      var sz=s.big?30:20;
+      var icon=L.divIcon({className:"",html:html,iconSize:[sz,sz],iconAnchor:[sz/2,sz/2]});
+      L.marker(s.ll,{icon:icon,title:s.n,keyboard:true}).addTo(map)
+        .bindPopup("<b>"+s.n+"</b><br>Day "+s.d+" · "+s.t+'<br><a href="#day'+s.d+'">Open Day '+s.d+'</a> · <a href="'+gm(s.q)+'" target="_blank" rel="noopener">Google Maps</a>');
+      b.push(s.ll);
+    });
+    map.fitBounds(b,{padding:[30,30]});
+    var leg=document.getElementById("mapleg");
+    [1,2,4,6,7,8].forEach(function(d){var sp=document.createElement("span");sp.innerHTML='<i style="background:'+DAYC[d-1]+'"></i>Day '+d+(d===2?" (lake: days 2–3)":d===4?" (Tainan: days 4–5)":"");leg.appendChild(sp);});
+  }
   function show(id,scroll){
     if(ids.indexOf(id)<0) id="overview";
     pages.forEach(function(p){p.hidden=(p.id!==id);});
@@ -769,6 +848,7 @@ tr.hi td{background:var(--lantern-soft)}
       var on=t.dataset.tab===id; t.setAttribute("aria-selected",on?"true":"false");
       if(on && t.scrollIntoView){try{t.scrollIntoView({block:"nearest",inline:"center"});}catch(e){}}
     });
+    if(id==="overview") initMap();
     if(scroll) window.scrollTo(0,0);
     try{localStorage.setItem("tw-tab",id);}catch(e){}
   }
