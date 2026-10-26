@@ -124,9 +124,11 @@ tr.hi td{background:var(--lantern-soft)}
 .compact table{min-width:0}
 .week table{min-width:0}
 .week td{padding:9px 14px}
-.week td.dc{vertical-align:top;background:var(--lake-soft);width:96px;border-right:1px solid var(--line)}
+.week td.dc{vertical-align:top;background:var(--lake-soft);width:130px;border-right:1px solid var(--line)}
 .week td.dc a{display:block;font-weight:700;text-decoration:none;color:var(--lake)}
-.week td.dc span{font:500 .75rem var(--mono);color:var(--muted)}
+.week td.dc span{font:500 .75rem var(--mono);color:var(--muted);display:block}
+.week td.dc em{display:block;margin-top:8px;font-style:normal;font-size:.8rem;line-height:1.3;color:var(--ink)}
+.week td.dc em::before{content:"Sleep: ";color:var(--muted)}
 .week tr.first td{border-top:2px solid var(--line)}
 .week td.h{font-family:var(--mono);font-size:.82rem;color:var(--muted);white-space:nowrap;width:84px}
 .week td.l{width:110px}
@@ -253,10 +255,10 @@ tr.hi td{background:var(--lantern-soft)}
   <div class="route" aria-label="Route">
     <ol class="stops">
       <li class="stop"><div class="dot"></div><span class="han">桃園</span><strong>Taoyuan</strong><span>Land ~13:00</span></li>
-      <li class="stop"><div class="dot"></div><span class="han">台中</span><strong>Taichung</strong><span>1 night</span></li>
-      <li class="stop hi"><div class="dot"></div><span class="han">日月潭</span><strong>Sun Moon Lake</strong><span>2 nights</span></li>
-      <li class="stop"><div class="dot"></div><span class="han">台南</span><strong>Tainan</strong><span>2 nights</span></li>
-      <li class="stop"><div class="dot"></div><span class="han">高雄</span><strong>Kaohsiung</strong><span>2 nights, fly home</span></li>
+      <li class="stop"><div class="dot"></div><span class="han">台中</span><strong>Taichung</strong><span>1 night · The Lin Hotel</span></li>
+      <li class="stop hi"><div class="dot"></div><span class="han">日月潭</span><strong>Sun Moon Lake</strong><span>2 nights · The Lalu</span></li>
+      <li class="stop"><div class="dot"></div><span class="han">台南</span><strong>Tainan</strong><span>2 nights · Silks Place</span></li>
+      <li class="stop"><div class="dot"></div><span class="han">高雄</span><strong>Kaohsiung</strong><span>2 nights · Grand Hi-Lai</span></li>
     </ol>
   </div>
 
@@ -271,28 +273,41 @@ tr.hi td{background:var(--lantern-soft)}
   </div>
 
   <div>
+    <div class="sec-head"><span class="eyebrow">Where we sleep</span><h2>Four hotels, seven nights</h2></div>
+    <div class="tbl-wrap compact"><table>
+      <thead><tr><th>Nights</th><th>Hotel</th><th>Why this one</th><th>Google Maps</th></tr></thead>
+      <tbody>
+        <tr><td class="d">Sat 28 Nov<br>1 night</td><td><b>The Lin Hotel</b><br><span class="muted">Xitun, Taichung</span></td><td>Walk to the National Taichung Theater, 4 min to Fengjia. Free parking, cots in every room.</td><td><a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lin+Hotel+Taichung" target="_blank" rel="noopener" aria-label="Open The Lin Hotel Taichung in Google Maps">Map</a></td></tr>
+        <tr class="hi"><td class="d">Sun 29 – Mon 30<br>2 nights</td><td><b>The Lalu</b><br><span class="muted">Sun Moon Lake</span></td><td>On the lakeshore, with the Lake View Chinese Restaurant upstairs for the special dinner.</td><td><a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lalu+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open The Lalu Sun Moon Lake in Google Maps">Map</a></td></tr>
+        <tr><td class="d">Tue 1 – Wed 2<br>2 nights</td><td><b>Silks Place Tainan</b><br><span class="muted">West Central, Tainan</span></td><td>Short walk to Hayashi and the old-town food streets. Free parking (check the van's height).</td><td><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Silks+Place+Tainan" target="_blank" rel="noopener" aria-label="Open Silks Place Tainan in Google Maps">Map</a></td></tr>
+        <tr><td class="d">Thu 3 – Fri 4<br>2 nights</td><td><b>Grand Hi-Lai Hotel</b><br><span class="muted">Kaohsiung</span></td><td>10 minutes' walk to the Love River, 2 km to Pier-2 and Liuhe. Free parking, family rooms.</td><td><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Grand+Hi-Lai+Hotel+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Grand Hi-Lai Hotel Kaohsiung in Google Maps">Map</a></td></tr>
+      </tbody></table></div>
+    <p class="mapnote" style="margin-top:8px">Not booked yet. Ask each hotel for a cot and, where needed, connecting rooms for the grandparents.</p>
+  </div>
+
+  <div>
     <div class="sec-head"><span class="eyebrow">At a glance</span><h2>The week in one table</h2>
     <p>Every stop, in order. Tap a day to open its full page, or a pin to open the place in Google Maps.</p></div>
-    <div class="tbl-wrap week"><table><thead><tr><th>Day</th><th>Start</th><th>Description</th><th>Google Maps</th></tr></thead><tbody><tr class="first"><td class="dc" rowspan="9"><a href="#day1">Day 1</a><span>Sat 28 Nov</span></td><td class="h">Morning</td><td>Fly Singapore → Taoyuan</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Taoyuan+International+Airport" target="_blank" rel="noopener" aria-label="Open Taoyuan International Airport in Google Maps">Map</a></td></tr>
+    <div class="tbl-wrap week"><table><thead><tr><th>Day</th><th>Start</th><th>Description</th><th>Google Maps</th></tr></thead><tbody><tr class="first"><td class="dc" rowspan="9"><a href="#day1">Day 1</a><span>Sat 28 Nov</span><em>The Lin Hotel, Taichung</em></td><td class="h">Morning</td><td>Fly Singapore → Taoyuan</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Taoyuan+International+Airport" target="_blank" rel="noopener" aria-label="Open Taoyuan International Airport in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">~13:00</td><td>Immigration, bags, SIM cards</td><td class="l"></td></tr>
 <tr class=""><td class="h">~14:00</td><td>Collect the rental car at the airport</td><td class="l"></td></tr>
 <tr class=""><td class="h">~14:45</td><td>Drive south on Freeway 3</td><td class="l"></td></tr>
 <tr class=""><td class="h">~15:45</td><td>Rest stop at Qingshui Service Area</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Qingshui+Service+Area" target="_blank" rel="noopener" aria-label="Open Qingshui Service Area in Google Maps">Map</a></td></tr>
-<tr class=""><td class="h">~17:00</td><td>Check in and rest</td><td class="l"></td></tr>
+<tr class=""><td class="h">~17:00</td><td>Check in at The Lin Hotel</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lin+Hotel+Taichung" target="_blank" rel="noopener" aria-label="Open The Lin Hotel Taichung in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">18:30</td><td>Dinner near the hotel</td><td class="l"></td></tr>
 <tr class=""><td class="h">20:00</td><td>National Taichung Theater at night</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=National+Taichung+Theater" target="_blank" rel="noopener" aria-label="Open National Taichung Theater in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">20:30</td><td>Optional night market: Fengjia</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Fengjia+Night+Market+Taichung" target="_blank" rel="noopener" aria-label="Open Fengjia Night Market Taichung in Google Maps">Map</a></td></tr>
-<tr class="first"><td class="dc" rowspan="10"><a href="#day2">Day 2</a><span>Sun 29 Nov</span></td><td class="h">09:30</td><td>Miyahara</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Miyahara+Taichung" target="_blank" rel="noopener" aria-label="Open Miyahara Taichung in Google Maps">Map</a></td></tr>
+<tr class="first"><td class="dc" rowspan="10"><a href="#day2">Day 2</a><span>Sun 29 Nov</span><em>The Lalu, Sun Moon Lake</em></td><td class="h">09:30</td><td>Miyahara</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Miyahara+Taichung" target="_blank" rel="noopener" aria-label="Open Miyahara Taichung in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">10:30</td><td>Sun cakes and the original bubble tea</td><td class="l"></td></tr>
 <tr class=""><td class="h">11:00</td><td>Calligraphy Greenway</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Calligraphy+Greenway+Taichung" target="_blank" rel="noopener" aria-label="Open Calligraphy Greenway Taichung in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">12:00</td><td>Lunch in Taichung</td><td class="l"></td></tr>
 <tr class=""><td class="h">13:00</td><td>Drive towards the lake</td><td class="l"></td></tr>
 <tr class=""><td class="h">14:15</td><td>Sun Moon Old Tea Factory</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Sun+Moon+Lake+Antique+Assam+Tea+Farm" target="_blank" rel="noopener" aria-label="Open Sun Moon Lake Antique Assam Tea Farm in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">15:30</td><td>Last stretch to the lake</td><td class="l"></td></tr>
-<tr class=""><td class="h">16:00</td><td>Check in, rest</td><td class="l"></td></tr>
+<tr class=""><td class="h">16:00</td><td>Check in at The Lalu</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lalu+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open The Lalu Sun Moon Lake in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">Dusk</td><td>Shuishe boardwalk</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Shuishe+Pier+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Shuishe Pier Sun Moon Lake in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">18:00</td><td>Optional night market: Puli City Night Market</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Puli+City+Night+Market" target="_blank" rel="noopener" aria-label="Open Puli City Night Market in Google Maps">Map</a></td></tr>
-<tr class="first"><td class="dc" rowspan="9"><a href="#day3">Day 3</a><span>Mon 30 Nov</span></td><td class="h">06:30</td><td>Sunrise on the water</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Xiangshan+Visitor+Center+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Xiangshan Visitor Center Sun Moon Lake in Google Maps">Map</a></td></tr>
+<tr class="first"><td class="dc" rowspan="9"><a href="#day3">Day 3</a><span>Mon 30 Nov</span><em>The Lalu, Sun Moon Lake</em></td><td class="h">06:30</td><td>Sunrise on the water</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Xiangshan+Visitor+Center+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Xiangshan Visitor Center Sun Moon Lake in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">08:00</td><td>Lake-view breakfast</td><td class="l"></td></tr>
 <tr class=""><td class="h">09:30</td><td>Boat pass from Shuishe Pier</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Shuishe+Pier+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Shuishe Pier Sun Moon Lake in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">10:00</td><td>Xuanguang Pier tea eggs</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Xuanguang+Pier+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Xuanguang Pier Sun Moon Lake in Google Maps">Map</a></td></tr>
@@ -301,13 +316,13 @@ tr.hi td{background:var(--lantern-soft)}
 <tr class=""><td class="h">16:30</td><td>Golden hour by the water</td><td class="l"></td></tr>
 <tr class=""><td class="h">16:45</td><td>Optional night snacks: Ita Thao street stalls</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Ita+Thao+Pier+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Ita Thao Pier Sun Moon Lake in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">18:00</td><td>Special dinner: The Lake View Chinese Restaurant, The Lalu</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lalu+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open The Lalu Sun Moon Lake in Google Maps">Map</a></td></tr>
-<tr class="first"><td class="dc" rowspan="6"><a href="#day4">Day 4</a><span>Tue 1 Dec</span></td><td class="h">09:00</td><td>Sun Moon Lake Ropeway</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Sun+Moon+Lake+Ropeway" target="_blank" rel="noopener" aria-label="Open Sun Moon Lake Ropeway in Google Maps">Map</a></td></tr>
+<tr class="first"><td class="dc" rowspan="6"><a href="#day4">Day 4</a><span>Tue 1 Dec</span><em>Silks Place Tainan</em></td><td class="h">09:00</td><td>Sun Moon Lake Ropeway</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Sun+Moon+Lake+Ropeway" target="_blank" rel="noopener" aria-label="Open Sun Moon Lake Ropeway in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">10:30</td><td>Buy tea to take home</td><td class="l"></td></tr>
 <tr class=""><td class="h">11:00</td><td>Drive south</td><td class="l"></td></tr>
 <tr class=""><td class="h">14:30</td><td>Chimei Museum</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Chimei+Museum+Tainan" target="_blank" rel="noopener" aria-label="Open Chimei Museum Tainan in Google Maps">Map</a></td></tr>
-<tr class=""><td class="h">17:00</td><td>Drive into Tainan</td><td class="l"></td></tr>
+<tr class=""><td class="h">17:00</td><td>Drive to Silks Place Tainan and check in</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Silks+Place+Tainan" target="_blank" rel="noopener" aria-label="Open Silks Place Tainan in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">18:00</td><td>Optional night market: Dadong</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Dadong+Night+Market+Tainan" target="_blank" rel="noopener" aria-label="Open Dadong Night Market Tainan in Google Maps">Map</a></td></tr>
-<tr class="first"><td class="dc" rowspan="9"><a href="#day5">Day 5</a><span>Wed 2 Dec</span></td><td class="h">07:30</td><td>Beef soup breakfast</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=A+Cun+Beef+Soup+Tainan" target="_blank" rel="noopener" aria-label="Open A Cun Beef Soup Tainan in Google Maps">Map</a></td></tr>
+<tr class="first"><td class="dc" rowspan="9"><a href="#day5">Day 5</a><span>Wed 2 Dec</span><em>Silks Place Tainan</em></td><td class="h">07:30</td><td>Beef soup breakfast</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=A+Cun+Beef+Soup+Tainan" target="_blank" rel="noopener" aria-label="Open A Cun Beef Soup Tainan in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">09:30</td><td>Anping Old Fort</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Anping+Old+Fort+Tainan" target="_blank" rel="noopener" aria-label="Open Anping Old Fort Tainan in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">10:15</td><td>Anping Tree House</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Anping+Tree+House+Tainan" target="_blank" rel="noopener" aria-label="Open Anping Tree House Tainan in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">11:00</td><td>Anping Old Street</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Anping+Old+Street+Tainan" target="_blank" rel="noopener" aria-label="Open Anping Old Street Tainan in Google Maps">Map</a></td></tr>
@@ -316,7 +331,7 @@ tr.hi td{background:var(--lantern-soft)}
 <tr class=""><td class="h">17:30</td><td>Danzai noodles at Du Hsiao Yueh</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Du+Hsiao+Yueh+Tainan" target="_blank" rel="noopener" aria-label="Open Du Hsiao Yueh Tainan in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">19:00</td><td>Shennong Street</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Shennong+Street+Tainan" target="_blank" rel="noopener" aria-label="Open Shennong Street Tainan in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">20:00</td><td>Optional night market: Wusheng</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Wusheng+Night+Market+Tainan" target="_blank" rel="noopener" aria-label="Open Wusheng Night Market Tainan in Google Maps">Map</a></td></tr>
-<tr class="first"><td class="dc" rowspan="8"><a href="#day6">Day 6</a><span>Thu 3 Dec</span></td><td class="h">08:00</td><td>Milkfish belly congee</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=A+Tang+Salty+Congee+Tainan" target="_blank" rel="noopener" aria-label="Open A Tang Salty Congee Tainan in Google Maps">Map</a></td></tr>
+<tr class="first"><td class="dc" rowspan="8"><a href="#day6">Day 6</a><span>Thu 3 Dec</span><em>Grand Hi-Lai Hotel, Kaohsiung</em></td><td class="h">08:00</td><td>Milkfish belly congee</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=A+Tang+Salty+Congee+Tainan" target="_blank" rel="noopener" aria-label="Open A Tang Salty Congee Tainan in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">10:00</td><td>Drive to Kaohsiung</td><td class="l"></td></tr>
 <tr class=""><td class="h">12:00</td><td>Lunch, then papaya milk</td><td class="l"></td></tr>
 <tr class=""><td class="h">13:00</td><td>Hotel rest</td><td class="l"></td></tr>
@@ -324,7 +339,7 @@ tr.hi td{background:var(--lantern-soft)}
 <tr class=""><td class="h">17:00</td><td>Love River boat</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Love+River+Boat+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Love River Boat Kaohsiung in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">18:00</td><td>Dome of Light</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Formosa+Boulevard+Station+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Formosa Boulevard Station Kaohsiung in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">18:30</td><td>Optional night market: Liuhe</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Liuhe+Night+Market+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Liuhe Night Market Kaohsiung in Google Maps">Map</a></td></tr>
-<tr class="first"><td class="dc" rowspan="6"><a href="#day7">Day 7</a><span>Fri 4 Dec</span></td><td class="h">08:30</td><td>Drive to Fo Guang Shan</td><td class="l"></td></tr>
+<tr class="first"><td class="dc" rowspan="6"><a href="#day7">Day 7</a><span>Fri 4 Dec</span><em>Grand Hi-Lai Hotel, Kaohsiung</em></td><td class="h">08:30</td><td>Drive to Fo Guang Shan</td><td class="l"></td></tr>
 <tr class=""><td class="h">09:15</td><td>Fo Guang Shan Buddha Museum</td><td class="l"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Fo+Guang+Shan+Buddha+Museum" target="_blank" rel="noopener" aria-label="Open Fo Guang Shan Buddha Museum in Google Maps">Map</a></td></tr>
 <tr class=""><td class="h">12:00</td><td>Vegetarian lunch on site</td><td class="l"></td></tr>
 <tr class=""><td class="h">13:30</td><td>Back to the hotel to rest</td><td class="l"></td></tr>
@@ -345,7 +360,7 @@ tr.hi td{background:var(--lantern-soft)}
       <p>A travel day kept deliberately light: land, collect the car at the airport, and an easy freeway drive to Taichung with one rest stop on the way.</p></div>
   </div>
   <div class="facts">
-    <div class="fact"><span class="eyebrow">Sleep</span><b>Taichung (Xitun)</b></div>
+    <div class="fact"><span class="eyebrow">Sleep</span><b>The Lin Hotel, Taichung <a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lin+Hotel+Taichung" target="_blank" rel="noopener" aria-label="Open The Lin Hotel Taichung in Google Maps">Map</a></b></div>
     <div class="fact"><span class="eyebrow">On the road</span><b>~2.5 h incl. a rest stop</b></div>
     <div class="fact"><span class="eyebrow">Walking</span><b>Very light</b></div>
     <div class="fact"><span class="eyebrow">Weather</span><b>~16–25 °C</b></div>
@@ -357,7 +372,7 @@ tr.hi td{background:var(--lantern-soft)}
       <li class="drive"><span class="t">~14:00</span><div class="what"><b>Collect the rental car at the airport</b><p>Rental counters are in the arrivals halls. Allow 30–45 minutes for paperwork and the walk-round. Fit the infant seat, set up phone navigation, and do 10 minutes of slow laps in the car park to get used to driving on the right.</p></div><figure><img src="photos/car0.jpg" alt="Collect the rental car at the airport" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Hyundai_Staria_Leonberg_2022_1X7A0432.jpg" target="_blank" rel="noopener">Alexander Migl · CC BY-SA 4.0</a></figcaption></figure></li>
       <li class="drive"><span class="t">~14:45</span><div class="what"><b>Drive south on Freeway 3</b><p>About 2 hours, around 150 km. Freeway 3 is quieter than Freeway 1 and avoids Taipei traffic. Stay in the middle lane, and let the passenger handle navigation.</p></div><figure><img src="photos/freeway0.jpg" alt="Drive south on Freeway 3" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Taiwan_National_Freeway_3_viewed_from_THSR.jpg" target="_blank" rel="noopener">Benlisquare · CC BY-SA 4.0</a></figcaption></figure></li>
       <li class="quest"><span class="t">~15:45</span><div class="what"><b>Rest stop at Qingshui Service Area <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Qingshui+Service+Area" target="_blank" rel="noopener" aria-label="Open Qingshui Service Area in Google Maps">Map</a></b><p>A hilltop service area overlooking the Taichung coast with clean toilets, nursing rooms and a food court. Stretch, feed the baby, and swap drivers.</p></div><figure><img src="photos/servicearea0.jpg" alt="Rest stop at Qingshui Service Area" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Qingshui_Service_Area,_2026_(05).jpg" target="_blank" rel="noopener">Bahnfrend · CC BY-SA 4.0</a></figcaption></figure></li>
-      <li><span class="t">~17:00</span><div class="what"><b>Check in and rest</b><p>Use the hotel car park. Unpack only what's needed for one night.</p></div><figure><img src="photos/taichungsky1.jpg" alt="Check in and rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Taichung_Skyline.jpg" target="_blank" rel="noopener">michael spadoni · CC0</a></figcaption></figure></li>
+      <li><span class="t">~17:00</span><div class="what"><b>Check in at The Lin Hotel <a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lin+Hotel+Taichung" target="_blank" rel="noopener" aria-label="Open The Lin Hotel Taichung in Google Maps">Map</a></b><p>In Xitun, a 6-minute walk from the National Taichung Theater and about 4 minutes' drive from Fengjia. Free self-parking, family rooms, and infant cots in every room. Unpack only what's needed for one night.</p></div><figure><img src="photos/taichungsky1.jpg" alt="Check in and rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Taichung_Skyline.jpg" target="_blank" rel="noopener">michael spadoni · CC0</a></figcaption></figure></li>
       <li class="eat"><span class="t">18:30</span><div class="what"><b>Dinner near the hotel</b><p>Xitun has malls with food courts that suit everyone. Have the first bubble tea of the trip.</p></div><figure><img src="photos/xitun4.jpg" alt="Dinner near the hotel" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Shin_Kong_Mitsukoshi_Taichung_Store_8F_2019.jpg" target="_blank" rel="noopener">Wpcpey · CC BY 4.0</a></figcaption></figure></li>
       <li class="quest"><span class="t">20:00</span><div class="what"><b>National Taichung Theater at night <a class="pin" href="https://www.google.com/maps/search/?api=1&query=National+Taichung+Theater" target="_blank" rel="noopener" aria-label="Open National Taichung Theater in Google Maps">Map</a></b><p>Toyo Ito's opera house has no straight walls. Free to wander in; the rooftop garden is open in the evening.</p></div><figure><img src="photos/ntt5.jpg" alt="National Taichung Theater at night" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:National_Taichung_Theater_(2024-03-09).jpg" target="_blank" rel="noopener">Theserious · CC0</a></figcaption></figure></li>
       <li class="eat"><span class="t">20:30</span><div class="what"><b>Optional night market: Fengjia <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Fengjia+Night+Market+Taichung" target="_blank" rel="noopener" aria-label="Open Fengjia Night Market Taichung in Google Maps">Map</a></b><p>Taiwan's biggest night market, open every evening, about 10 minutes from Xitun. It's a Saturday so it will be packed: one adult can make a quick snack run while the others take the baby back to the hotel. Try grilled squid, big fried chicken cutlets and anything with a queue.</p></div><figure><img src="photos/fengjia0.jpg" alt="Fengjia Night Market street at night" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:1_fengjia_night_market_2019.jpg" target="_blank" rel="noopener">Chensiyuan · CC BY-SA 4.0</a></figcaption></figure></li>
@@ -379,7 +394,7 @@ tr.hi td{background:var(--lantern-soft)}
       <p>A sweet morning in Taichung, lunch near the Greenway, tea tasting at an old tea factory in the hills, and the first sight of Sun Moon Lake by late afternoon.</p></div>
   </div>
   <div class="facts">
-    <div class="fact"><span class="eyebrow">Sleep</span><b>Sun Moon Lake</b></div>
+    <div class="fact"><span class="eyebrow">Sleep</span><b>The Lalu, Sun Moon Lake <a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lalu+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open The Lalu Sun Moon Lake in Google Maps">Map</a></b></div>
     <div class="fact"><span class="eyebrow">On the road</span><b>~2 h total, 3 legs</b></div>
     <div class="fact"><span class="eyebrow">Walking</span><b>Light, all flat</b></div>
     <div class="fact"><span class="eyebrow">Weather</span><b>Lake ~13–22 °C</b></div>
@@ -393,7 +408,7 @@ tr.hi td{background:var(--lantern-soft)}
       <li class="drive"><span class="t">13:00</span><div class="what"><b>Drive towards the lake</b><p>About 1 hour 15 minutes on Freeway 6, then Provincial Highway 21 past Puli. Tunnels and mountains, easy and well-lit. Good point to swap drivers.</p></div><figure><img src="photos/freeway2.jpg" alt="Drive towards the lake" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723000.jpg" target="_blank" rel="noopener">OnionBulb · CC BY-SA 4.0</a></figcaption></figure></li>
       <li class="quest"><span class="t">14:15</span><div class="what"><b>Sun Moon Old Tea Factory <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Sun+Moon+Lake+Antique+Assam+Tea+Farm" target="_blank" rel="noopener" aria-label="Open Sun Moon Lake Antique Assam Tea Farm in Google Maps">Map</a></b><p>A 1950s tea factory in the hills above the lake that still makes organic black tea. Walk through the old drying and rolling floors, taste Red Jade and Assam teas side by side, and try the black-tea ice cream and pastries in the café. Mostly indoors, about an hour.</p></div><figure><img src="photos/teafactory0.jpg" alt="Sun Moon Old Tea Factory" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%88%E8%80%81%E8%8C%B6%E5%BB%A0_Tea_Farm,_Sun_Moon_Lake_14.jpg" target="_blank" rel="noopener">舟集 Boattoad · CC BY-SA 4.0</a></figcaption></figure></li>
       <li class="drive"><span class="t">15:30</span><div class="what"><b>Last stretch to the lake</b><p>About 15 minutes of gently winding road. Take it slowly; it's the first look at the water.</p></div><figure><img src="photos/teafactory3.jpg" alt="Last stretch to the lake" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%88%E8%80%81%E8%8C%B6%E5%BB%A0_Tea_Farm,_Sun_Moon_Lake_13.jpg" target="_blank" rel="noopener">舟集 Boattoad · CC BY-SA 4.0</a></figcaption></figure></li>
-      <li><span class="t">16:00</span><div class="what"><b>Check in, rest</b><p>Ask for a lake-view room on a higher floor.</p></div><figure><img src="photos/smlhotel2.jpg" alt="Check in, rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:View_of_Sun_Moon_Lake_from_The_Lalu_Sun_Moon_Lake_01.jpg" target="_blank" rel="noopener">Dquai · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li><span class="t">16:00</span><div class="what"><b>Check in at The Lalu <a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lalu+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open The Lalu Sun Moon Lake in Google Maps">Map</a></b><p>The lakeside resort on the Shuishe side, home of tomorrow night's dinner restaurant. Ask for a lake-view room and a cot, and use the hotel car park.</p></div><figure><img src="photos/smlhotel2.jpg" alt="Check in, rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:View_of_Sun_Moon_Lake_from_The_Lalu_Sun_Moon_Lake_01.jpg" target="_blank" rel="noopener">Dquai · CC BY-SA 4.0</a></figcaption></figure></li>
       <li><span class="t">Dusk</span><div class="what"><b>Shuishe boardwalk <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Shuishe+Pier+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open Shuishe Pier Sun Moon Lake in Google Maps">Map</a></b><p>A flat waterfront walk as the lights come on across the water.</p></div><figure><img src="photos/shuishe3.jpg" alt="Shuishe boardwalk" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Shuishe_Pier_at_night.jpg" target="_blank" rel="noopener">Dquai · CC BY-SA 4.0</a></figcaption></figure></li>
       <li class="eat"><span class="t">18:00</span><div class="what"><b>Optional night market: Puli City Night Market <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Puli+City+Night+Market" target="_blank" rel="noopener" aria-label="Open Puli City Night Market in Google Maps">Map</a></b><p>The nearest proper night market to the lake, open only Friday to Sunday from 17:30, so tonight works. About 30 minutes' drive back to Puli, with a free car park and public toilets. Herbal soup, honey-glazed grilled chicken, sweet potato balls and grilled quail eggs. If everyone is tired, have dinner in Shuishe village instead.</p></div><figure><img src="photos/sausage3.jpg" alt="Grilled sausages at a Taiwanese night market" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:2012-11-19_grilled_sausages_at_the_Shilin_night_market.jpg" target="_blank" rel="noopener">Maya-Anaïs Y. · CC BY 2.0</a></figcaption></figure></li>
 </ol></div>
@@ -414,7 +429,7 @@ tr.hi td{background:var(--lantern-soft)}
       <p>No packing, no driving. Boats between piers, snacks at every stop, a long afternoon rest and a special dinner by the water.</p></div>
   </div>
   <div class="facts">
-    <div class="fact"><span class="eyebrow">Sleep</span><b>Sun Moon Lake</b></div>
+    <div class="fact"><span class="eyebrow">Sleep</span><b>The Lalu, Sun Moon Lake <a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lalu+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open The Lalu Sun Moon Lake in Google Maps">Map</a></b></div>
     <div class="fact"><span class="eyebrow">On the road</span><b>None. Boats only</b></div>
     <div class="fact"><span class="eyebrow">Walking</span><b>Light</b></div>
     <div class="fact"><span class="eyebrow">Dress code</span><b>Something nice tonight</b></div>
@@ -449,7 +464,7 @@ tr.hi td{background:var(--lantern-soft)}
       <p>A cable car over the mountains, then the long drive of the trip, broken up by a palace-sized museum just outside Tainan.</p></div>
   </div>
   <div class="facts">
-    <div class="fact"><span class="eyebrow">Sleep</span><b>Tainan</b></div>
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Silks Place Tainan <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Silks+Place+Tainan" target="_blank" rel="noopener" aria-label="Open Silks Place Tainan in Google Maps">Map</a></b></div>
     <div class="fact"><span class="eyebrow">On the road</span><b>~3 h, one long leg</b></div>
     <div class="fact"><span class="eyebrow">Walking</span><b>Light, lifts everywhere</b></div>
     <div class="fact"><span class="eyebrow">Weather</span><b>Tainan ~18–26 °C</b></div>
@@ -460,7 +475,7 @@ tr.hi td{background:var(--lantern-soft)}
       <li class="eat"><span class="t">10:30</span><div class="what"><b>Buy tea to take home</b><p>Red Jade black tea from a lakeside tea shop. Then check out.</p></div><figure><img src="photos/teafactory2.jpg" alt="Buy tea to take home" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%88%E8%80%81%E8%8C%B6%E5%BB%A0_Tea_Farm,_Sun_Moon_Lake_01.jpg" target="_blank" rel="noopener">舟集 Boattoad · CC BY-SA 4.0</a></figcaption></figure></li>
       <li class="drive"><span class="t">11:00</span><div class="what"><b>Drive south</b><p>About 2.5 hours, mostly Freeway 3. Stop at a freeway service area for lunch; Taiwan's service areas have clean toilets, nursing rooms and decent food courts.</p></div><figure><img src="photos/freeway3.jpg" alt="Drive south" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723007.jpg" target="_blank" rel="noopener">OnionBulb · CC BY-SA 4.0</a></figcaption></figure></li>
       <li><span class="t">14:30</span><div class="what"><b>Chimei Museum <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Chimei+Museum+Tainan" target="_blank" rel="noopener" aria-label="Open Chimei Museum Tainan in Google Maps">Map</a></b><p>A white palace on a lake with fountains and a sculpture bridge. Inside: European paintings, one of the world's biggest violin collections, natural history and arms. Lifts throughout. Closed Wednesdays, which is why it's today.</p></div><figure><img src="photos/chimei3.jpg" alt="Chimei Museum" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Chimei_Museum_20190210.jpg" target="_blank" rel="noopener">Deon · CC BY-SA 2.0</a></figcaption></figure></li>
-      <li class="drive"><span class="t">17:00</span><div class="what"><b>Drive into Tainan</b><p>About 25 minutes. Use the hotel car park and leave the car there tomorrow.</p></div><figure><img src="photos/chihkan1.jpg" alt="Drive into Tainan" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Chihkan_Tower_night.JPG" target="_blank" rel="noopener">Koika · CC BY-SA 3.0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">17:00</span><div class="what"><b>Drive to Silks Place Tainan and check in <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Silks+Place+Tainan" target="_blank" rel="noopener" aria-label="Open Silks Place Tainan in Google Maps">Map</a></b><p>About 25 minutes. In West Central, a short walk to Hayashi Department Store and 1.3 km from Shennong Street. Free parking with a height limit: check the van fits when you book, or ask about nearby car parks. The car stays parked tomorrow.</p></div><figure><img src="photos/chihkan1.jpg" alt="Drive into Tainan" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Chihkan_Tower_night.JPG" target="_blank" rel="noopener">Koika · CC BY-SA 3.0</a></figcaption></figure></li>
       <li class="eat"><span class="t">18:00</span><div class="what"><b>Optional night market: Dadong <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Dadong+Night+Market+Tainan" target="_blank" rel="noopener" aria-label="Open Dadong Night Market Tainan in Google Maps">Map</a></b><p>One of Tainan's biggest night markets, open only on Mondays, Tuesdays and Fridays, so tonight is the night. About 10 minutes by taxi from the hotel; leave the car parked after the long drive. Go at opening before the crowds. Try sweet potato balls, spicy duck blood and Spanish mackerel stew. Keep it to an hour if everyone is tired.</p></div><figure><img src="photos/dadong1.jpg" alt="Dadong Night Market stalls" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Dadong_Night_Market_20081219_01.jpg" target="_blank" rel="noopener">LH Wong · CC BY-SA 2.0</a></figcaption></figure></li>
 </ol></div>
     <div class="side">
@@ -480,7 +495,7 @@ tr.hi td{background:var(--lantern-soft)}
       <p>Taiwan's oldest city. Breakfast soup at dawn, Dutch forts, a warehouse eaten by a tree, and lanterns at night. Leave the car parked; taxis are faster in the old lanes.</p></div>
   </div>
   <div class="facts">
-    <div class="fact"><span class="eyebrow">Sleep</span><b>Tainan</b></div>
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Silks Place Tainan <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Silks+Place+Tainan" target="_blank" rel="noopener" aria-label="Open Silks Place Tainan in Google Maps">Map</a></b></div>
     <div class="fact"><span class="eyebrow">On the road</span><b>Taxis only</b></div>
     <div class="fact"><span class="eyebrow">Walking</span><b>Moderate, benches often</b></div>
     <div class="fact"><span class="eyebrow">Eating</span><b>All day</b></div>
@@ -514,7 +529,7 @@ tr.hi td{background:var(--lantern-soft)}
       <p>A short drive south to Kaohsiung: harbour warehouses full of art, a stained-glass metro station and a sunset boat on the Love River.</p></div>
   </div>
   <div class="facts">
-    <div class="fact"><span class="eyebrow">Sleep</span><b>Kaohsiung</b></div>
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Grand Hi-Lai Hotel, Kaohsiung <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Grand+Hi-Lai+Hotel+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Grand Hi-Lai Hotel Kaohsiung in Google Maps">Map</a></b></div>
     <div class="fact"><span class="eyebrow">On the road</span><b>~1 h</b></div>
     <div class="fact"><span class="eyebrow">Walking</span><b>Light, wide promenades</b></div>
     <div class="fact"><span class="eyebrow">Weather</span><b>~19–27 °C, sunniest stop</b></div>
@@ -522,7 +537,7 @@ tr.hi td{background:var(--lantern-soft)}
   <div class="dbody"><div>
     <div class="legend"><span><i></i>Plan</span><span><i class="e"></i>Food</span><span><i class="q"></i>Side quest</span><span><i class="dr"></i>Drive</span></div>
     <ol class="rail">      <li class="eat"><span class="t">08:00</span><div class="what"><b>Milkfish belly congee <a class="pin" href="https://www.google.com/maps/search/?api=1&query=A+Tang+Salty+Congee+Tainan" target="_blank" rel="noopener" aria-label="Open A Tang Salty Congee Tainan in Google Maps">Map</a></b><p>Tainan's other classic breakfast. A Tang's salty congee is a local institution and opens before dawn.</p></div><figure><img src="photos/milkfish0.jpg" alt="Milkfish belly congee" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Milkfish_Congee_%E8%99%B1%E7%9B%AE%E9%AD%9A%E7%B2%A5.jpg" target="_blank" rel="noopener">姜 明雄 · CC0</a></figcaption></figure></li>
-      <li class="drive"><span class="t">10:00</span><div class="what"><b>Drive to Kaohsiung</b><p>About 1 hour on Freeway 1. Drop bags at the hotel.</p></div><figure><img src="photos/freeway4.jpg" alt="Drive to Kaohsiung" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723008.jpg" target="_blank" rel="noopener">OnionBulb · CC BY-SA 4.0</a></figcaption></figure></li>
+      <li class="drive"><span class="t">10:00</span><div class="what"><b>Drive to Kaohsiung</b><p>About 1 hour on Freeway 1. Check in or drop bags at the Grand Hi-Lai Hotel <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Grand+Hi-Lai+Hotel+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Grand Hi-Lai Hotel Kaohsiung in Google Maps">Map</a>, which has free self-parking and family rooms, about 10 minutes' walk from the Love River.</p></div><figure><img src="photos/freeway4.jpg" alt="Drive to Kaohsiung" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:NationalFreeway3_20220723008.jpg" target="_blank" rel="noopener">OnionBulb · CC BY-SA 4.0</a></figcaption></figure></li>
       <li class="eat"><span class="t">12:00</span><div class="what"><b>Lunch, then papaya milk</b><p>Kaohsiung's signature drink. The Kaohsiung Milk King <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Kaohsiung+Milk+King" target="_blank" rel="noopener" aria-label="Open Kaohsiung Milk King in Google Maps">Map</a> has been blending it since the 1960s.</p></div><figure><img src="photos/papaya33.jpg" alt="Lunch, then papaya milk" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Food_%E6%9C%A8%E7%93%9C%E7%89%9B%E5%A5%B6,_%E5%93%88%E5%AF%86%E7%93%9C%E7%89%9B%E5%A5%B6,_%E5%85%89%E8%8F%AF%E6%9C%A8%E7%93%9C%E7%89%9B%E5%A5%B6%E5%A4%A7%E7%8E%8B,_%E5%85%89%E8%8F%AF%E5%A4%9C%E5%B8%82,_%E9%AB%98%E9%9B%84_(15747947605).jpg" target="_blank" rel="noopener">bryan... from Taipei, Taiwan · CC BY-SA 2.0</a></figcaption></figure></li>
       <li><span class="t">13:00</span><div class="what"><b>Hotel rest</b></div><figure><img src="photos/kaohsiungsky1.jpg" alt="Hotel rest" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Kaohsiung_skyline_2020_May.jpg" target="_blank" rel="noopener">ABOVE THE SKY · CC BY-SA 4.0</a></figcaption></figure></li>
       <li><span class="t">15:30</span><div class="what"><b>Pier-2 Art Center <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Pier-2+Art+Center+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Pier-2 Art Center Kaohsiung in Google Maps">Map</a></b><p>Old harbour warehouses turned galleries, design shops and giant outdoor sculptures. The Kaohsiung Music Center across the water has wave-shaped buildings. Flat and stroller-friendly with paid parking.</p></div><figure><img src="photos/pier20.jpg" alt="Pier-2 Art Center" loading="lazy" decoding="async"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Pier-2_Art_Center.jpg" target="_blank" rel="noopener">Anav Rin from Gushan, Kaohsiung, Taipei · CC BY 2.0</a></figcaption></figure></li>
@@ -547,7 +562,7 @@ tr.hi td{background:var(--lantern-soft)}
       <p>A morning at one of Taiwan's grandest temple complexes, a rest, then the night market or a seafood dinner on an island across the harbour.</p></div>
   </div>
   <div class="facts">
-    <div class="fact"><span class="eyebrow">Sleep</span><b>Kaohsiung</b></div>
+    <div class="fact"><span class="eyebrow">Sleep</span><b>Grand Hi-Lai Hotel, Kaohsiung <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Grand+Hi-Lai+Hotel+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Grand Hi-Lai Hotel Kaohsiung in Google Maps">Map</a></b></div>
     <div class="fact"><span class="eyebrow">On the road</span><b>~1.5 h, two round trips</b></div>
     <div class="fact"><span class="eyebrow">Walking</span><b>Moderate, wheelchairs on loan</b></div>
     <div class="fact"><span class="eyebrow">Tonight</span><b>Pick A or B</b></div>
@@ -680,10 +695,10 @@ tr.hi td{background:var(--lantern-soft)}
       <li><b>Home:</b> Sat 5 Dec, China Airlines CI757, Kaohsiung 13:10 → Singapore 17:30.</li>
       <li>Bassinet row for the baby on both legs.</li></ul></div>
     <div class="box"><h4>Where we stay</h4><ul>
-      <li><b>Taichung</b> · Xitun, near the Greenway</li>
-      <li><b>Sun Moon Lake</b> · lake-view room, Shuishe side</li>
-      <li><b>Tainan</b> · West Central, with a car park</li>
-      <li><b>Kaohsiung</b> · near Pier-2 or the Love River, with a car park</li></ul></div>
+      <li><b>Sat 28</b> · The Lin Hotel, Taichung <a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lin+Hotel+Taichung" target="_blank" rel="noopener" aria-label="Open The Lin Hotel Taichung in Google Maps">Map</a></li>
+      <li><b>Sun 29 – Mon 30</b> · The Lalu, Sun Moon Lake <a class="pin" href="https://www.google.com/maps/search/?api=1&query=The+Lalu+Sun+Moon+Lake" target="_blank" rel="noopener" aria-label="Open The Lalu Sun Moon Lake in Google Maps">Map</a></li>
+      <li><b>Tue 1 – Wed 2</b> · Silks Place Tainan <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Silks+Place+Tainan" target="_blank" rel="noopener" aria-label="Open Silks Place Tainan in Google Maps">Map</a></li>
+      <li><b>Thu 3 – Fri 4</b> · Grand Hi-Lai Hotel, Kaohsiung <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Grand+Hi-Lai+Hotel+Kaohsiung" target="_blank" rel="noopener" aria-label="Open Grand Hi-Lai Hotel Kaohsiung in Google Maps">Map</a></li></ul></div>
   </div>
 
   <div>
@@ -798,14 +813,14 @@ tr.hi td{background:var(--lantern-soft)}
   var DAYC=["#B8472F","#C8792B","#2F7D6E","#1E5D59","#5B6FB0","#8A4FA0","#C2477A","#4E6E7A"];
   var STOPS=[
     {d:1,n:"Taoyuan International Airport",t:"Land ~13:00, collect the car",ll:[25.0797,121.2342],q:"Taoyuan International Airport"},
-    {d:1,n:"Taichung",t:"Night 1 · Xitun, National Taichung Theater, Fengjia",ll:[24.1626,120.6408],q:"National Taichung Theater",big:1},
+    {d:1,n:"Taichung",t:"Night 1 · The Lin Hotel · Taichung Theater, Fengjia",ll:[24.1626,120.6408],q:"National Taichung Theater",big:1},
     {d:2,n:"Miyahara",t:"Ice cream and pineapple cakes",ll:[24.1377,120.6835],q:"Miyahara Taichung"},
     {d:2,n:"Puli",t:"On the way to the lake; Sunday night market",ll:[23.9650,120.9686],q:"Puli City Night Market"},
-    {d:2,n:"Sun Moon Lake",t:"Nights 2–3 · boats, Ita Thao, lake dinner",ll:[23.8661,120.9112],q:"Shuishe Pier Sun Moon Lake",big:1},
+    {d:2,n:"Sun Moon Lake",t:"Nights 2–3 · The Lalu · boats, Ita Thao, lake dinner",ll:[23.8661,120.9112],q:"Shuishe Pier Sun Moon Lake",big:1},
     {d:4,n:"Chimei Museum",t:"Palace museum on the way south",ll:[22.9349,120.2263],q:"Chimei Museum Tainan"},
-    {d:4,n:"Tainan",t:"Nights 4–5 · Anping, Shennong Street, Dadong and Wusheng",ll:[22.9910,120.2017],q:"Hayashi Department Store Tainan",big:1},
+    {d:4,n:"Tainan",t:"Nights 4–5 · Silks Place Tainan · Anping, Shennong Street",ll:[22.9910,120.2017],q:"Hayashi Department Store Tainan",big:1},
     {d:5,n:"Anping",t:"Old Fort and the Tree House",ll:[23.0017,120.1606],q:"Anping Old Fort Tainan"},
-    {d:6,n:"Kaohsiung",t:"Nights 6–7 · Pier-2, Love River, Liuhe and Ruifeng",ll:[22.6200,120.2814],q:"Pier-2 Art Center Kaohsiung",big:1},
+    {d:6,n:"Kaohsiung",t:"Nights 6–7 · Grand Hi-Lai Hotel · Pier-2, Love River",ll:[22.6200,120.2814],q:"Pier-2 Art Center Kaohsiung",big:1},
     {d:7,n:"Fo Guang Shan",t:"Day trip: Buddha Museum",ll:[22.7567,120.4436],q:"Fo Guang Shan Buddha Museum"},
     {d:8,n:"Kaohsiung International Airport",t:"Return the car, fly 13:10",ll:[22.5771,120.3500],q:"Kaohsiung International Airport"}
   ];
